@@ -14,13 +14,13 @@
 # Set Environment
 #################################################################
 
-DEBUG=0     # Set to 1 to enable debugging, 0 to disable.
+export DEBUG=0     # Set to 1 to enable debugging, 0 to disable.
 if [ $DEBUG -eq 1 ]; then
 	set -x  # echo commands as they are executed.
 fi
 set -e      # break on errorlevel != 0.
 
-VERSION=38  # Version of Moodle.
+export VERSION=38  # Version of Moodle.
 if [[ ! -z "${APP_DATA}" ]]; then # If on an OpenShift server.
 	# $OPENSHIFT_BUILD_REFERENCE is provided by the OpenShift build invironment.
 	echo "OpenShift installation. Using $OPENSHIFT_BUILD_REFERENCE"
@@ -44,7 +44,7 @@ else # Local build
 		# Otherwise default to Moodle HQ release.
 		OPENSHIFT_BUILD_REFERENCE=MOODLE_${VERSION}_STABLE
 	fi
-	echo "Local installation. Using default version $BRANCH"
+	echo "Local installation. Using default version ${VERSION}"
 fi
 
 #################################################################
@@ -93,9 +93,14 @@ install_plugin() {
 # Installing Moodle
 # https://moodle.org/
 # Origin: https://github.com/moodle/moodle.git
-# Note: Branch based on version of Moodle.
+# Note: Need to clone whole repo in order to include patches.
 rm -rf .git
-install_plugin "." "MOODLE_${VERSION}_STABLE" "https://github.com/ised-isde-canada/moodle.git"
+#install_plugin "." "MOODLE_${VERSION}_STABLE" "https://github.com/ised-isde-canada/moodle.git"
+#git fetch origin
+git clone https://github.com/ised-isde-canada/moodle.git mtemp
+(shopt -s dotglob && mv mtemp/* .)
+rm mtemp
+git checkout "MOODLE_${VERSION}_STABLE"
 
 #################################################################
 # Install Moodle plugins - in alphabetical order.
@@ -187,13 +192,11 @@ install_plugin "theme/gcweb" "master" "https://github.com/ised-isde-canada/moodl
 #install_plugin "theme/gcintranet" "master" "https://github.com/ised-isde-canada/moodle-theme_gcintranet.git"
 
 #################################################################
-# Copy config.php file into place, if on OpenShift server.
+# If on OpenShift server, move config.php file into place.
 #################################################################
 if [[ ! -z "${APP_DATA}" ]]; then # If on an OpenShift server.
     # Copy config.php file into place, .
     cp $APP_DATA/php-post-assemble/config.php $APP_DATA/
-    # Install WebTrends JavaScript file into place.
-    cp php-post-assemble/webtrends_moodle.js $APP_DATA/
 else  # Local server
     ROOT="../"
     if [[ ! "${PWD##*/}" =~ ^(www|htdocs|public_html)$ ]]; then ROOT="${ROOT}../" ; fi
@@ -201,22 +204,3 @@ else  # Local server
     echo "1) Create a database for the new Moodle site."
     echo "2) Go to your website on http://localhost to begin installation."
 fi
-
-#################################################################
-# Finish/Clean up!
-#################################################################
-if [ $DEBUG -eq 1 ]; then
-    # If debugging, don't deploy.
-    echo "Aborting deployment in active debugging mode."
-    exit 1
-else
-    # Cleanup
-    rm README.md
-    rm -rf ocp
-    rm -rf php-post-assemble
-	chmod -R g+w .
-fi
-
-# Remove PHP Composer folders - doesn't make any difference in OpenShift.
-#if [ -d "$APP_DATA/vender" ]; then rm -Rf $APP_DATA/vender; fi
-#if [ -d "$APP_DATA/node_modules" ]; then rm -Rf $APP_DATA/node_modules; fi
