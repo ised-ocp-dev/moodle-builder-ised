@@ -96,11 +96,22 @@ install_plugin() {
 # Note: Need to clone whole repo in order to include patches.
 rm -rf .git
 #install_plugin "." "MOODLE_${VERSION}_STABLE" "https://github.com/ised-isde-canada/moodle.git"
-#git fetch origin
-git clone https://github.com/ised-isde-canada/moodle.git mtemp
-(shopt -s dotglob && mv mtemp/* .)
-rm mtemp
-git checkout "MOODLE_${VERSION}_STABLE"
+
+# Clone Moodle into the current directory.
+GITURL="https://github.com/ised-isde-canada/moodle.git"
+(git clone $GITURL mtemp && shopt -s dotglob && mv mtemp/* . && rm mtemp)
+
+# Check if a custom branch exists for this site build.
+set +e # Allow exit codes
+git ls-remote --heads --exit-code "$GITURL" "$OPENSHIFT_BUILD_REFERENCE">/dev/null
+if [ $? -eq 0 ]; then
+	BRANCH=$OPENSHIFT_BUILD_REFERENCE
+else # Determine the latest version of Moodle available.
+	mver=$(git ls-remote https://github.com/moodle/moodle.git|grep -P "MOODLE_\d{2}_STABLE"|tail -1)
+    BRANCH=${mver:52}
+fi
+set -e # Break on exit codes other than 0.
+git checkout $BRANCH
 
 #################################################################
 # Install Moodle plugins - in alphabetical order.
