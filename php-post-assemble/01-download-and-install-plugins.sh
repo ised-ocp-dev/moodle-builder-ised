@@ -99,7 +99,8 @@ rm -rf .git
 
 # Clone Moodle into the current directory.
 GITURL="https://github.com/ised-isde-canada/moodle.git"
-(git clone $GITURL mtemp && shopt -s dotglob && mv mtemp/* . && rm mtemp)
+git clone $GITURL mtemp
+pushd mtemp >/dev/null
 
 # Check if a custom branch exists for this site build.
 set +e # Allow exit codes
@@ -112,6 +113,9 @@ else # Determine the latest version of Moodle available.
 fi
 set -e # Break on exit codes other than 0.
 git checkout $BRANCH
+popd >/dev/null
+
+(shopt -s dotglob && mv mtemp/* . && rm -rf mtemp)
 
 #################################################################
 # Install Moodle plugins - in alphabetical order.
