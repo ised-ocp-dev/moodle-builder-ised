@@ -1,6 +1,7 @@
 #!/bin/bash
 #################################################################
-# This script will install Moodle, themes and plugins.          #
+# This script will install Moodle, themes and plugins into      #
+# Openshift or to a local webserver such as XAMPP.              #
 # Author: Michael Milette - www.tngconsulting.ca                #
 #################################################################
 
@@ -8,7 +9,17 @@
 # Notes
 #################################################################
 # Reminder: Use the Origin links for each plugin to check if a there is
-#   a specific branch associated with the version of Moodle you are using.
+# a specific branch associated with the version of Moodle you are using.
+
+#################################################################
+# Instructions for For local installations...
+#################################################################
+# 1) Create a directory for your website.
+# 2) Change into the new directory.
+# 3) Complete the following commands without changing directory:
+# git clone https://github.com/ised-isde-canada/moodle-builder-ised.git .
+# php-post-assemble/01-download-and-install-plugins.sh
+# 4) Complete the displayed instructions.
 
 #################################################################
 # Set Environment
@@ -20,15 +31,13 @@ if [ $DEBUG -eq 1 ]; then
 fi
 set -e      # break on errorlevel != 0.
 
-export VERSION=38  # Version of Moodle.
 if [[ ! -z "${APP_DATA}" ]]; then # If on an OpenShift server.
 	# $OPENSHIFT_BUILD_REFERENCE is provided by the OpenShift build invironment.
-	echo "OpenShift installation. Using $OPENSHIFT_BUILD_REFERENCE"
+	echo "OpenShift installation. Using $OPENSHIFT_BUILD_REFERENCE."
     # For GitHub
     export GIT_COMMITTER_NAME=ISED-ISDE
     export GIT_COMMITTER_EMAIL=ised-isde@canada.ca
-
-    # Attempt to make volume writable (TODO: it is currently not too successful).
+    # Make volume writable.
     echo "Setting umask..."
     echo `umask`
     umask 0002
@@ -36,16 +45,20 @@ else # Local build
 	if [[ ! -z "$1" ]]; then
 		# If a build was specified on the command line.
 		OPENSHIFT_BUILD_REFERENCE=$1
-		echo "To create that specific build, use the following commands:"
-		echo "git checkout $1"
-		echo "${BASH_SOURCE[0]}"
-		exit /b
+    	echo "Local installation. Using specified version ${OPENSHIFT_BUILD_REFERENCE}."
 	else
-		# Otherwise default to Moodle HQ release.
-		OPENSHIFT_BUILD_REFERENCE=MOODLE_${VERSION}_STABLE
+        # Default to building the latest stable Moodle branch available in ISED's GitHub repo.
+        mver=$(git ls-remote https://github.com/ised-isde-canada/moodle.git|grep -P "MOODLE_\d{2}_STABLE"|tail -1)
+		OPENSHIFT_BUILD_REFERENCE=${mver:52}
+    	echo "Local installation. Using latest available version ${OPENSHIFT_BUILD_REFERENCE}."
 	fi
-	echo "Local installation. Using default version ${VERSION}"
 fi
+
+# Get the name of the directory in which this script is located.
+SCRIPTDIR="$(dirname $0)"
+
+# Delete the builder .git folder or it will conflict with Moodle's.
+rm -rf .git
 
 #################################################################
 # Supporting functions
@@ -61,23 +74,21 @@ install_plugin() {
     local GITURL="${3}"  # URL of the upstream repo on GitHub.
 
     if [ ! "${DIRPATH}" == "." ]; then
-		# Create plugin's directory and change into it, saving it in the process.
+		# Create plugin's directory and change into it, saving the previous one in the process.
         mkdir -p $DIRPATH
         pushd $DIRPATH >/dev/null
     fi
 
-    git init
+    # Clone the repo into the current directory.
+    # Note: Need to clone whole repo in order to include patches.
+    git clone $GITURL .
 
     # Check if a custom branch exists for this site build.
-	set +e # Allow exit codes
-    git ls-remote --heads --exit-code "$GITURL" "$OPENSHIFT_BUILD_REFERENCE">/dev/null
-    if [ $? -eq 0 ]; then
+    if [ -n "$(git branch --list "$OPENSHIFT_BUILD_REFERENCE")" ]; then
         BRANCH=$OPENSHIFT_BUILD_REFERENCE
     fi
-	set -e # Break on exit codes other than 0.
 
-    # Download just the branch we need.
-    git remote add -t $BRANCH -f origin $GITURL
+    # Checkout the branch we need.
     git checkout --quiet origin/$BRANCH
 
     if [ ! "${DIRPATH}" == "." ]; then
@@ -94,31 +105,14 @@ install_plugin() {
 # https://moodle.org/
 # Origin: https://github.com/moodle/moodle.git
 # Note: Need to clone whole repo in order to include patches.
-rm -rf .git
-#install_plugin "." "MOODLE_${VERSION}_STABLE" "https://github.com/ised-isde-canada/moodle.git"
-
-# Clone Moodle into the current directory.
-GITURL="https://github.com/ised-isde-canada/moodle.git"
-git clone $GITURL mtemp
-pushd mtemp >/dev/null
-
-# Check if a custom branch exists for this site build.
-set +e # Allow exit codes
-git ls-remote --heads --exit-code "$GITURL" "$OPENSHIFT_BUILD_REFERENCE">/dev/null
-if [ $? -eq 0 ]; then
-	BRANCH=$OPENSHIFT_BUILD_REFERENCE
-else # Determine the latest version of Moodle available.
-	mver=$(git ls-remote https://github.com/moodle/moodle.git|grep -P "MOODLE_\d{2}_STABLE"|tail -1)
-    BRANCH=${mver:52}
-fi
-set -e # Break on exit codes other than 0.
-git checkout $BRANCH
-popd >/dev/null
-
+install_plugin "mtemp" "${OPENSHIFT_BUILD_REFERENCE}" "https://github.com/ised-isde-canada/moodle.git"
+# Move Moodle into the right folder. Could not initially clone there because target directory is not empty.
 (shopt -s dotglob && mv mtemp/* . && rm -rf mtemp)
+# Parse the major version number from Moodle's own version.php.
+export VERSION=$(grep -oE 'branch .* = .*;' version.php | awk -F \' '{print $2}')
 
 #################################################################
-# Install Moodle plugins - in alphabetical order.
+# Install plugins - in alphabetical order.
 #################################################################
 
 # Activity: Custom certificate
@@ -207,15 +201,23 @@ install_plugin "theme/gcweb" "master" "https://github.com/ised-isde-canada/moodl
 #install_plugin "theme/gcintranet" "master" "https://github.com/ised-isde-canada/moodle-theme_gcintranet.git"
 
 #################################################################
-# If on OpenShift server, move config.php file into place.
+# Finish up.
 #################################################################
 if [[ ! -z "${APP_DATA}" ]]; then # If on an OpenShift server.
-    # Copy config.php file into place, .
+    # If on OpenShift server, move config.php file into place.
     cp $APP_DATA/php-post-assemble/config.php $APP_DATA/
 else  # Local server
+    # Create moodledata and provide instructions to complete installation.
     ROOT="../"
+    # Two levels up if we are not installing Moodle in the webroot.
     if [[ ! "${PWD##*/}" =~ ^(www|htdocs|public_html)$ ]]; then ROOT="${ROOT}../" ; fi
     mkdir -p ${ROOT}moodledata/${PWD##*/}
+    # Apply patches.
+    sh $SCRIPTDIR/02-patch-moodle.sh
+    # clean-up
+    sh $SCRIPTDIR/03-clean-up.sh
+    # Finish with displaying a few instuctions.
     echo "1) Create a database for the new Moodle site."
     echo "2) Go to your website on http://localhost to begin installation."
+    echo "Note: Moodle data is in ${ROOT}moodledata/${PWD##*/}"
 fi

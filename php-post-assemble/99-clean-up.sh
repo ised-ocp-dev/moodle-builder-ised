@@ -12,6 +12,7 @@ else
     rm README.md
     rm -rf ocp
     rm -rf php-post-assemble
+    # Make volume writable.
 	chmod -R g+w .
 fi
 

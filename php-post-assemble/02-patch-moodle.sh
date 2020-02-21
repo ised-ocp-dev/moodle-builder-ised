@@ -22,7 +22,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
 		git cherry-pick e1b71c7 # MDL-67554 OAuth2: Filtering to Parameters Included in a Login Request.
     ;;
     *) # Unknown branch
-		echo "Unknown branch. Export the BRANCH variable first. Exiting without patching..."
-        exit 0
+		echo "Unknown branch. Export the VERSION variable first. Exiting without patching..."
+        exit 1
     ;;
 esac
