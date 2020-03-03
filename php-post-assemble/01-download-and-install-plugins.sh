@@ -1,4 +1,4 @@
-#!/bin/bash
+#!bin/bash
 #################################################################
 # This script will install Moodle, themes and plugins into      #
 # Openshift or to a local webserver such as XAMPP.              #
@@ -130,6 +130,11 @@ install_plugin "mod/subcourse" "master" "https://github.com/ised-isde-canada/moo
 # https://moodle.org/plugins/availability_language
 # Origin: https://github.com/ewallah/moodle-availability_language
 install_plugin "availability/condition/language" "MOODLE_37_STABLE" "https://github.com/ised-isde-canada/moodle-availability_language.git"
+
+# Block: Admin Presets
+# https://github.com/DigiDago/moodle-block_admin_presets
+# Origin: https://github.com/DigiDago/moodle-block_admin_presets
+install_plugin "blocks/admin_presets" "MOODLE_${VERSION}_STABLE" "https://github.com/DigiDago/moodle-block_admin_presets.git"
 
 # Block: Completion Progress
 # https://moodle.org/plugins/block_completion_progress
