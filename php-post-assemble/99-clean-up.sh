@@ -12,6 +12,7 @@ else
     rm README.md
     rm -rf ocp
     rm -rf php-post-assemble
+    # set 404-Page.
     # Make volume writable.
 	chmod -R g+w .
 fi
