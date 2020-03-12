@@ -212,8 +212,6 @@ install_plugin "theme/gcweb" "master" "https://github.com/ised-isde-canada/moodl
 if [[ ! -z "${APP_DATA}" ]]; then # If on an OpenShift server.
     # Move config.php file into place.
     cp $APP_DATA/php-post-assemble/config.php $APP_DATA/
-    # Set-up error page in .htaccess.
-    echo "ErrorDocument 404 ${MOODLE_URL}/theme/gcweb/layout/404.php">>.htaccess
 else  # Local server
     # Create moodledata and provide instructions to complete installation.
     ROOT="../"
