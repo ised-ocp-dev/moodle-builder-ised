@@ -89,7 +89,7 @@ install_plugin() {
     fi
 
     # Checkout the branch we need.
-    git checkout --quiet origin/$BRANCH
+    git checkout $BRANCH
 
     if [ ! "${DIRPATH}" == "." ]; then
 	   # Return back to the origin directory.
