@@ -7,6 +7,7 @@
 echo "Applying patches to ISED's Moodle."
 case "$VERSION" in   # Determine branch based on version of Moodle.
     37) # MOODLE 3.7
+		git cherry-pick origin/MDL-63219-M37 # Add Moodle filters support to Custom Menus.
 		git cherry-pick origin/MDL-66849-M37 # OutputComponents: Remove custom menu title when not specified.
 		git cherry-pick origin/MDL-66856-M37 # Output components: Enable HTML in custom menu.
 		git cherry-pick origin/MDL-67554-M37 # OAuth2: Filtering to Parameters Included in a Login Request.
@@ -18,6 +19,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
 		git cherry-pick origin/MDL-68257-M37 # MDL-68257 book: Fix for overlapping text in book table-of-contents.
     ;;
     38) # MOODLE 3.8
+		git cherry-pick origin/MDL-63219-M38 # Add Moodle filters support to Custom Menus.
 		git cherry-pick origin/MDL-66849-M38 # OutputComponents: Remove custom menu title when not specified.
 		git cherry-pick origin/MDL-66856-M38 # Output components: Enable HTML in custom menu.
 		git cherry-pick origin/MDL-67554-M38 # OAuth2: Filtering to Parameters Included in a Login Request.
@@ -29,6 +31,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
 		git cherry-pick origin/MDL-68257-M38 # MDL-68257 book: Fix for overlapping text in book table-of-contents.
     ;;
     39) # MOODLE 3.9 (master)
+		git cherry-pick origin/MDL-63219-master # Add Moodle filters support to Custom Menus.
 		git cherry-pick origin/MDL-66849-master # OutputComponents: Remove custom menu title when not specified.
 		git cherry-pick origin/MDL-66856-master # Output components: Enable HTML in custom menu.
 		git cherry-pick origin/MDL-67554-master # OAuth2: Filtering to Parameters Included in a Login Request.
