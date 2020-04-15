@@ -11,7 +11,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
 		git cherry-pick origin/MDL-66856-M37 # Output components: Enable HTML in custom menu.
 		git cherry-pick origin/MDL-67554-M37 # OAuth2: Filtering to Parameters Included in a Login Request.
 		git cherry-pick origin/MDL-67802-M37 # Revert "MDL-66598 tool_oauth2: Make account confirmation required by default.
-		git cherry-pick origin/m37-MDL-52810 # MDL-52810 search: Prevent including courses in hidden categories.
+		git cherry-pick origin/MDL-52810-M37 # m37-MDL-52810 search: Prevent including courses in hidden categories.
 		#NOT-READY git cherry-pick origin/MDL-61789-M37 # MDL-61789 auth_oauth2: Allow admin to choose profile fields for mapping.
 		git cherry-pick origin/MDL-61880-M37 # MDL-61880 auth_oauth2: User field mappings, endpoints updated separetely.
 		git cherry-pick origin/MDL-61750-M37 # Add support for filtering in Moodle Custom Menus.
@@ -22,7 +22,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
 		git cherry-pick origin/MDL-66856-M38 # Output components: Enable HTML in custom menu.
 		git cherry-pick origin/MDL-67554-M38 # OAuth2: Filtering to Parameters Included in a Login Request.
 		git cherry-pick origin/MDL-67802-M38 # Revert "MDL-66598 tool_oauth2: Make account confirmation required by default.
-		git cherry-pick origin/m38-MDL-52810 # MDL-52810 search: Prevent including courses in hidden categories.
+		git cherry-pick origin/MDL-52810-M38 # m38-MDL-52810 search: Prevent including courses in hidden categories.
 		#NOT-READY git cherry-pick origin/MDL-61789-M38 # MDL-61789 auth_oauth2: Allow admin to choose profile fields for mapping.
 		git cherry-pick origin/MDL-61880-M38 # MDL-61880 auth_oauth2: User field mappings, endpoints updated separetely.
 		git cherry-pick origin/MDL-61750-M38 # Add support for filtering in Moodle Custom Menus.
@@ -33,7 +33,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
 		git cherry-pick origin/MDL-66856-master # Output components: Enable HTML in custom menu.
 		git cherry-pick origin/MDL-67554-master # OAuth2: Filtering to Parameters Included in a Login Request.
 		git cherry-pick origin/MDL-67802-master # Revert "MDL-66598 tool_oauth2: Make account confirmation required by default.
-		git cherry-pick origin/master-MDL-52810 # MDL-52810 search: Prevent including courses in hidden categories.
+		git cherry-pick origin/MDL-52810-master # master-MDL-52810 search: Prevent including courses in hidden categories.
 		#NOT-READY git cherry-pick origin/MDL-61789-master # MDL-61789 auth_oauth2: Allow admin to choose profile fields for mapping.
 		git cherry-pick origin/MDL-61880-master # MDL-61880 auth_oauth2: User field mappings, endpoints updated separetely.
 		git cherry-pick origin/MDL-61750-master # Add support for filtering in Moodle Custom Menus.
