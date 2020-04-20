@@ -16,6 +16,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
 		#NOT-READY git cherry-pick origin/MDL-61789-M37 # MDL-61789 auth_oauth2: Allow admin to choose profile fields for mapping.
 		git cherry-pick origin/MDL-61880-M37 # MDL-61880 auth_oauth2: User field mappings, endpoints updated separetely.
 		git cherry-pick origin/MDL-63219-M37 # Add support for filtering in Moodle Custom Menus.
+		git cherry-pick origin/MDL-64969-M37 # MDL-64969 auth: Disable autocomplete if rememberusername disabled.
 		git cherry-pick origin/MDL-68253-M37 # MDL-68253 mod_book: Remove prev arrow on the firstmost page.
 		git cherry-pick origin/MDL-68257-M37 # MDL-68257 book: Fix for overlapping text in book table-of-contents.
     ;;
@@ -29,6 +30,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
 		#NOT-READY git cherry-pick origin/MDL-61789-M38 # MDL-61789 auth_oauth2: Allow admin to choose profile fields for mapping.
 		git cherry-pick origin/MDL-61880-M38 # MDL-61880 auth_oauth2: User field mappings, endpoints updated separetely.
 		git cherry-pick origin/MDL-63219-M38 # Add support for filtering in Moodle Custom Menus.
+		git cherry-pick origin/MDL-64969-M38 # MDL-64969 auth: Disable autocomplete if rememberusername disabled.
 		git cherry-pick origin/MDL-68253-M38 # MDL-68253 mod_book: Remove prev arrow on the firstmost page.
 		git cherry-pick origin/MDL-68257-M38 # MDL-68257 book: Fix for overlapping text in book table-of-contents.
     ;;
@@ -42,6 +44,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
 		#NOT-READY git cherry-pick origin/MDL-61789-master # MDL-61789 auth_oauth2: Allow admin to choose profile fields for mapping.
 		git cherry-pick origin/MDL-61880-master # MDL-61880 auth_oauth2: User field mappings, endpoints updated separetely.
 		git cherry-pick origin/MDL-63219-master # Add support for filtering in Moodle Custom Menus.
+		git cherry-pick origin/MDL-64969-master # MDL-64969 auth: Disable autocomplete if rememberusername disabled.
 		git cherry-pick origin/MDL-68253-master # MDL-68253 mod_book: Remove prev arrow on the firstmost page.
 		git cherry-pick origin/MDL-68257-master # MDL-68257 book: Fix for overlapping text in book table-of-contents.
     ;;
