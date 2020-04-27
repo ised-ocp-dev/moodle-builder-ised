@@ -613,6 +613,8 @@ $CFG->admin = 'admin';
 // debug messages, this overrides the debug flag in $CFG->debug and $CFG->debugdisplay
 // for these users only.
 // $CFG->debugusers = '2';
+$CFG->debugusers = '$_ENV["DEBUGUSERS"];';
+
 //
 // Prevent theme caching
 // $CFG->themedesignermode = true; // NOT FOR PRODUCTION SERVERS!
