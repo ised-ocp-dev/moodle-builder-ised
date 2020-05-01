@@ -615,6 +615,11 @@ $CFG->admin = 'admin';
 // $CFG->debugusers = '2';
 $CFG->debugusers = '$_ENV["DEBUGUSERS"];';
 
+// You can enable smtp debuging. You will still need to set Display debug to
+// DEVELOPER: extra Moodle messages for developers and enable Display debug messages
+// from within Moodle in order for the SMTP dialogue to be displayed.
+$CFG->debugsmtp = true;
+
 //
 // Prevent theme caching
 // $CFG->themedesignermode = true; // NOT FOR PRODUCTION SERVERS!
