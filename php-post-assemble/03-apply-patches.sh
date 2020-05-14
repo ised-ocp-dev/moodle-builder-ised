@@ -18,7 +18,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
     ;;
     37) # MOODLE 3.7 - Bug fixes until May 2020. Security patches until November 2020.
 		git cherry-pick origin/MDL-63219-M37 # Add Moodle filters support to Custom Menus.
-		git cherry-pick origin/MDL-66849-M37 # OutputComponents: Remove custom menu title when not specified.
+		#DONE git cherry-pick origin/MDL-66849-M37 # OutputComponents: Remove custom menu title when not specified.
 		git cherry-pick origin/MDL-66856-M37 # Output components: Enable HTML in custom menu.
 		git cherry-pick origin/MDL-67554-M37 # OAuth2: Filtering to Parameters Included in a Login Request.
 		git cherry-pick origin/MDL-67802-M37 # Revert "MDL-66598 tool_oauth2: Make account confirmation required by default.
@@ -32,7 +32,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
     ;;
     38) # MOODLE 3.8 - Bug fixes until November 2020. Security patches until May 2021.
 		git cherry-pick origin/MDL-63219-M38 # Add Moodle filters support to Custom Menus.
-		git cherry-pick origin/MDL-66849-M38 # OutputComponents: Remove custom menu title when not specified.
+		#DONE git cherry-pick origin/MDL-66849-M38 # OutputComponents: Remove custom menu title when not specified.
 		git cherry-pick origin/MDL-66856-M38 # Output components: Enable HTML in custom menu.
 		git cherry-pick origin/MDL-67554-M38 # OAuth2: Filtering to Parameters Included in a Login Request.
 		git cherry-pick origin/MDL-67802-M38 # Revert "MDL-66598 tool_oauth2: Make account confirmation required by default.
@@ -46,7 +46,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
     ;;
     39) # MOODLE 3.9 X-LTS (master) - Bug fixes until May 2021. Security patches until May 2024. (to be confirmed when launched)
 		git cherry-pick origin/MDL-63219-master # Add Moodle filters support to Custom Menus.
-		git cherry-pick origin/MDL-66849-master # OutputComponents: Remove custom menu title when not specified.
+		#DONE git cherry-pick origin/MDL-66849-master # OutputComponents: Remove custom menu title when not specified.
 		git cherry-pick origin/MDL-66856-master # Output components: Enable HTML in custom menu.
 		git cherry-pick origin/MDL-67554-master # OAuth2: Filtering to Parameters Included in a Login Request.
 		git cherry-pick origin/MDL-67802-master # Revert "MDL-66598 tool_oauth2: Make account confirmation required by default.
