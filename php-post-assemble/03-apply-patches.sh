@@ -29,6 +29,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
 		git cherry-pick origin/MDL-64969-M37 # auth: Disable autocomplete if rememberusername disabled.
 		git cherry-pick origin/MDL-68257-M37 # book: Fix for overlapping text in book table-of-contents.
 		git cherry-pick origin/MDL-68337-M37 # theme_boost: Add manual completion checkbox focus indicator.
+		git cherry-pick origin/MDL-68765-M37 # auth: Login form has DIV tag with 2 CLASS attributes.
     ;;
     38) # MOODLE 3.8 - Bug fixes until November 2020. Security patches until May 2021.
 		#DONE git cherry-pick origin/MDL-66849-M38 # OutputComponents: Remove custom menu title when not specified.
@@ -43,6 +44,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
 		git cherry-pick origin/MDL-64969-M38 # auth: Disable autocomplete if rememberusername disabled.
 		git cherry-pick origin/MDL-68257-M38 # book: Fix for overlapping text in book table-of-contents.
 		git cherry-pick origin/MDL-68337-M38 # theme_boost: Add manual completion checkbox focus indicator.
+		git cherry-pick origin/MDL-68765-M38 # auth: Login form has DIV tag with 2 CLASS attributes.
     ;;
     39) # MOODLE 3.9 X-LTS (master) - Bug fixes until May 2021. Security patches until May 2024. (to be confirmed when launched)
 		#DONE git cherry-pick origin/MDL-66849-master # OutputComponents: Remove custom menu title when not specified.
@@ -57,6 +59,7 @@ case "$VERSION" in   # Determine branch based on version of Moodle.
 		git cherry-pick origin/MDL-64969-master # auth: Disable autocomplete if rememberusername disabled.
 		git cherry-pick origin/MDL-68257-master # book: Fix for overlapping text in book table-of-contents.
 		git cherry-pick origin/MDL-68337-master # theme_boost: Add manual completion checkbox focus indicator.
+		git cherry-pick origin/MDL-68765-master # auth: Login form has DIV tag with 2 CLASS attributes.
     ;;
 	# 40) # MOODLE 4.0 (master) - Launch November 2021. (to be confirmed) - Bug fixes until ???. Security patches until ???.
 	# ;;
