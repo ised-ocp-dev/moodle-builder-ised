@@ -42,9 +42,10 @@ pipeline {
 
 				script {
 					sh"""
-						rm -rf moodle/.git
-						rm -rf moodle/composer.*
-						cd moodle && mv * ../
+						cd moodle && \
+							rm -rf .git && \
+							rm -rf composer.* && \
+							mv * ../
 						rm -rf moodle/
 					"""
 				}
