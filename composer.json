@@ -20,22 +20,10 @@
         {
             "type": "package",
             "package": {
-                "name": "ised-isde-canada/moodle",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle.git",
-                    "type": "git",
-                    "reference": "MOODLE_38_STABLE"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
                 "name": "ised-isde-canada/moodle-builder-ised",
                 "version": "1.0",
                 "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-mod_customcert.git",
+                    "url": "https://github.com/ised-isde-canada/moodle-builder-ised.git",
                     "type": "git",
                     "reference": "MOODLE_ISED_TEST"
                 }
@@ -197,10 +185,9 @@
                 }
             }
         }
-   ],
+    ],
     "extra": {
         "installer-paths": {
-            "./": ["ised-isde-canada/moodle"],
             "./openshift": ["ised-isde-canada/moodle-builder-ised"],
             "./mod/customcert": ["ised-isde-canada/moodle-mod_customcert"],
             "./mod/subcourse": ["ised-isde-canada/moodle-mod_subcourse"],
@@ -219,7 +206,6 @@
     },
     "require": {
         "mnsami/composer-custom-directory-installer": "1.1.*",
-        "ised-isde-canada/moodle": "1.0",
         "ised-isde-canada/moodle-builder-ised": "1.0",
         "ised-isde-canada/moodle-mod_customcert": "1.0",
         "ised-isde-canada/moodle-availability_language": "1.0",
@@ -236,24 +222,11 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "git cherry-pick origin/MDL-63219-M38",
-            "git cherry-pick origin/MDL-66856-M38",
-            "git cherry-pick origin/MDL-67554-M38",
-            "git cherry-pick origin/MDL-67802-M38",
-            "git cherry-pick origin/MDL-52810-M38",
-            "git cherry-pick origin/MDL-61880-M38",
-            "git cherry-pick origin/MDL-64969-M38",
-            "git cherry-pick origin/MDL-68257-M38",
-            "git cherry-pick origin/MDL-68337-M38",
-            "git cherry-pick origin/MDL-68766b-M38",
             "cp openshift/config.php .",
-            "cp openshift/.s2i .",
-            "cp openshift/httpd-cfg .",
-            "cp openshift/php-pre-start .",
+            "cp -r openshift/httpd-cfg .",
+            "cp -r openshift/php-pre-start .",
             "rm -rf openshift",
             "chmod -R g+w ."
         ]
     }
 }
-
-
