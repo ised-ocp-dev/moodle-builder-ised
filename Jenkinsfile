@@ -1,9 +1,7 @@
 @Library('ised-cicd-lib') _
 
 pipeline {
-	agent {
-		label 'php-7.3'
-	}
+	agent any
 	
     options {
         disableConcurrentBuilds()
