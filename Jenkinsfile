@@ -19,9 +19,12 @@ pipeline {
 				script {
 					sh"""
 						if [ -d "moodle" ]; then rm -Rf moodle; fi
-						git clone -b MOODLE_38_STABLE https://github.com/ised-isde-canada/moodle.git
 					"""
 				}
+
+				git branch: 'MOODLE_38_STABLE',
+					url: 'https://github.com/ised-isde-canada/moodle.git'
+
 				dir("moodle") {
 					script {
 						sh"""
