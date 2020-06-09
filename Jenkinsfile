@@ -1,7 +1,9 @@
 @Library('ised-cicd-lib') _
 
 pipeline {
-	agent any
+	agent {
+		label: 'php-7.3'
+	}
 	
     options {
         disableConcurrentBuilds()
@@ -49,14 +51,13 @@ pipeline {
 
 				script {
 					sh"""
-						pwd
-						ls -l
-
 						cd moodle && \
 							rm -rf .git && \
 							rm -rf composer.* && \
 							mv * ../
 						rm -rf moodle/
+						pwd
+						ls -l
 					"""
 				}
 			}
