@@ -21,6 +21,7 @@ pipeline {
 						if [ -d "moodle" ]; then rm -Rf moodle; fi
 						git clone -b MOODLE_38_STABLE https://github.com/ised-isde-canada/moodle.git
 						rm -rf moodle/.git
+						rm -rf moodle/composer.*
 						cd moodle && mv * ../
 						rm -rf moodle/
 					"""
