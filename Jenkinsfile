@@ -20,7 +20,7 @@ pipeline {
 					sh"""
 						git clone -b MOODLE_38_STABLE https://github.com/ised-isde-canada/moodle.git
 						rm -rf moodle/.git
-						mv -r moodle/ .
+						mv -R moodle/ .
 					"""
 	    			builder.buildS2IAppFromDir("${IMAGE_NAME}", "${BUILD_NAME}", ".")
 				}
