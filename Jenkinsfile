@@ -19,6 +19,8 @@ pipeline {
 				script {
 					sh"""
 						if [ -d "moodle" ]; then rm -Rf moodle; fi
+						pwd
+						ls -l
 					"""
 				}
 
@@ -28,6 +30,8 @@ pipeline {
 				dir("moodle") {
 					script {
 						sh"""
+						pwd
+						ls -l
 							git cherry-pick origin/MDL-63219-M38
 							git cherry-pick origin/MDL-66856-M38
 							git cherry-pick origin/MDL-67554-M38
@@ -45,8 +49,9 @@ pipeline {
 
 				script {
 					sh"""
+						pwd
 						ls -l
-						
+
 						cd moodle && \
 							rm -rf .git && \
 							rm -rf composer.* && \
