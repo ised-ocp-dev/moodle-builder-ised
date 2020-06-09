@@ -45,6 +45,8 @@ pipeline {
 
 				script {
 					sh"""
+						ls -l
+						
 						cd moodle && \
 							rm -rf .git && \
 							rm -rf composer.* && \
