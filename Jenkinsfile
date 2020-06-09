@@ -22,7 +22,7 @@ pipeline {
 						git clone -b MOODLE_38_STABLE https://github.com/ised-isde-canada/moodle.git
 					"""
 				}
-				workdir("moodle") {
+				dir("moodle") {
 					script {
 						sh"""
 							git cherry-pick origin/MDL-63219-M38
