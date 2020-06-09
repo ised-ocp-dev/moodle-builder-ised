@@ -24,10 +24,10 @@ pipeline {
 					"""
 				}
 
-				git branch: 'MOODLE_38_STABLE',
-					url: 'https://github.com/ised-isde-canada/moodle.git'
-
 				dir("moodle") {
+					git branch: 'MOODLE_38_STABLE',
+						url: 'https://github.com/ised-isde-canada/moodle.git'
+
 					script {
 						sh"""
 						pwd
