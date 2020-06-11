@@ -20,6 +20,18 @@
         {
             "type": "package",
             "package": {
+                "name": "ised-isde-canada/moodle",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle.git",
+                    "type": "git",
+                    "reference": "MOODLE_38_STABLE"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "ised-isde-canada/moodle-builder-ised",
                 "version": "1.0",
                 "source": {
@@ -185,28 +197,28 @@
                 }
             }
         }
-    ],
+   ],
     "extra": {
         "installer-paths": {
-            "./openshift": ["ised-isde-canada/moodle-builder-ised"],
-            "./mod/customcert": ["ised-isde-canada/moodle-mod_customcert"],
-            "./mod/subcourse": ["ised-isde-canada/moodle-mod_subcourse"],
-            "./availability/condition/language": ["ised-isde-canada/moodle-availability_language"],
-            "./blocks/admin_presets": ["ised-isde-canada/moodle-block_admin_presets"],
-            "./blocks/configurable_reports": ["ised-isde-canada/moodle-block_configurablereports"],
-            "./filter/filtercodes": ["ised-isde-canada/moodle-filter_filtercodes"],
-            "./filter/multilang2": ["ised-isde-canada/moodle-filter_multilang2"],
-            "./local/adminer": ["ised-isde-canada/moodle-local_adminer"],
-            "./local/contact": ["ised-isde-canada/moodle-local_contact"],
-            "./local/mailtest": ["ised-isde-canada/moodle-local_mailtest"],
-            "./local/isedisde": ["ised-isde-canada/moodle-local_isedisde"],
-            "./local/login": ["ised-isde-canada/moodle-local_login"],
-            "./theme/gcweb": ["ised-isde-canada/moodle-theme_gcweb"]
+            "./dist": ["ised-isde-canada/moodle"],
+            "./dist/mod/customcert": ["ised-isde-canada/moodle-mod_customcert"],
+            "./dist/mod/subcourse": ["ised-isde-canada/moodle-mod_subcourse"],
+            "./dist/availability/condition/language": ["ised-isde-canada/moodle-availability_language"],
+            "./dist/blocks/admin_presets": ["ised-isde-canada/moodle-block_admin_presets"],
+            "./dist/blocks/configurable_reports": ["ised-isde-canada/moodle-block_configurablereports"],
+            "./dist/filter/filtercodes": ["ised-isde-canada/moodle-filter_filtercodes"],
+            "./dist/filter/multilang2": ["ised-isde-canada/moodle-filter_multilang2"],
+            "./dist/local/adminer": ["ised-isde-canada/moodle-local_adminer"],
+            "./dist/local/contact": ["ised-isde-canada/moodle-local_contact"],
+            "./dist/local/mailtest": ["ised-isde-canada/moodle-local_mailtest"],
+            "./dist/local/isedisde": ["ised-isde-canada/moodle-local_isedisde"],
+            "./dist/local/login": ["ised-isde-canada/moodle-local_login"],
+            "./dist/theme/gcweb": ["ised-isde-canada/moodle-theme_gcweb"]
         }
     },
     "require": {
         "mnsami/composer-custom-directory-installer": "1.1.*",
-        "ised-isde-canada/moodle-builder-ised": "1.0",
+        "ised-isde-canada/moodle": "1.0",
         "ised-isde-canada/moodle-mod_customcert": "1.0",
         "ised-isde-canada/moodle-availability_language": "1.0",
         "ised-isde-canada/moodle-block_admin_presets": "1.0",
@@ -222,10 +234,23 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "cp openshift/config.php .",
-            "cp -r openshift/httpd-cfg .",
-            "cp -r openshift/php-pre-start .",
-            "rm -rf openshift",
+            "cd dist && git cherry-pick -n origin/MDL-63219-M38",
+            "cd dist && git cherry-pick -n origin/MDL-66856-M38",
+            "cd dist && git cherry-pick -n origin/MDL-67554-M38",
+            "cd dist && git cherry-pick -n origin/MDL-67802-M38",
+            "cd dist && git cherry-pick -n origin/MDL-52810-M38",
+            "cd dist && git cherry-pick -n origin/MDL-61880-M38",
+            "cd dist && git cherry-pick -n origin/MDL-64969-M38",
+            "cd dist && git cherry-pick -n origin/MDL-68257-M38",
+            "cd dist && git cherry-pick -n origin/MDL-68337-M38",
+            "cd dist && git cherry-pick -n origin/MDL-68766b-M38",
+            "cp -r .s2i dist/",
+            "cp -r httpd-cfg dist/",
+            "cp -r php-pre-start dist/",
+            "rm dist/composer.json",
+            "rm dist/composer.lock",
+            "cp -r dist/* .",
+            "rm -rf dist",
             "chmod -R g+w ."
         ]
     }
