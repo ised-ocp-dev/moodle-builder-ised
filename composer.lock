@@ -31,7 +31,7 @@
             "version": "1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ised-isde-canada/moodle-block_admin_presets.git",
+                "url": "https://github.com/ised-isde-canada/xxmoodle-block_admin_presets.git",
                 "reference": "MOODLE_38_STABLE"
             },
             "type": "library"
