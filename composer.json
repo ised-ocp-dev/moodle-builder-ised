@@ -83,7 +83,7 @@
                 "name": "ised-isde-canada/moodle-block_admin_presets",
                 "version": "1.0",
                 "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-block_admin_presets.git",
+                    "url": "https://github.com/ised-isde-canada/xxmoodle-block_admin_presets.git",
                     "type": "git",
                     "reference": "MOODLE_38_STABLE"
                 }
