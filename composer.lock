@@ -32,7 +32,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/xxmoodle-block_admin_presets.git",
-                "reference": "MOODLE_38_STABLE"
+                "reference": "ISED_ISDE_38"
             },
             "type": "library"
         },
