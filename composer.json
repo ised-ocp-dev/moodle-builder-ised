@@ -8,10 +8,10 @@
         {
             "type": "package",
             "package": {
-                "name": "mnsami/composer-custom-directory-installer",
+                "name": "ised-isde-canada/composer-custom-directory-installer",
                 "version": "1.0",
                 "source": {
-                    "url": "https://github.com/mnsami/composer-custom-directory-installer.git",
+                    "url": "https://github.com/ised-isde-canada/composer-custom-directory-installer.git",
                     "type": "git",
                     "reference": "master"
                 }
@@ -25,7 +25,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle.git",
                     "type": "git",
-                    "reference": "MOODLE_38_STABLE"
+                    "reference": "ISED_ISDE_38"
                 }
             }
         },
@@ -37,7 +37,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-builder-ised.git",
                     "type": "git",
-                    "reference": "MOODLE_ISED_TEST"
+                    "reference": "jenkins-test"
                 }
             }
         },
@@ -49,7 +49,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-mod_customcert.git",
                     "type": "git",
-                    "reference": "MOODLE_38_STABLE"
+                    "reference": "ISED_ISDE_38"
                 }
             }
         },
@@ -61,7 +61,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-mod_subcourse.git",
                     "type": "git",
-                    "reference": "MOODLE_38_STABLE"
+                    "reference": "ISED_ISDE_38"
                 }
             }
         },
@@ -73,7 +73,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-availability_language.git",
                     "type": "git",
-                    "reference": "MOODLE_37_STABLE"
+                    "reference": "ISED_ISDE_38"
                 }
             }
         },
@@ -97,7 +97,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-block_configurablereports.git",
                     "type": "git",
-                    "reference": "MOODLE_36_STABLE"
+                    "reference": "ISED_ISDE_38"
                 }
             }
         },
@@ -109,7 +109,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-filter_filtercodes.git",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "ISED_ISDE_38"
                 }
             }
         },
@@ -121,7 +121,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-filter_multilang2.git",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "ISED_ISDE_38"
                 }
             }
         },
@@ -133,7 +133,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-local_adminer.git",
                     "type": "git",
-                    "reference": "MOODLE_38_STABLE"
+                    "reference": "ISED_ISDE_38"
                 }
             }
         },
@@ -145,7 +145,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-local_contact.git",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "ISED_ISDE_38"
                 }
             }
         },
@@ -157,7 +157,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-local_mailtest.git",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "ISED_ISDE_38"
                 }
             }
         },
@@ -169,7 +169,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-local_isedisde.git",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "ISED_ISDE_38"
                 }
             }
         },
@@ -181,7 +181,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-local_login.git",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "ISED_ISDE_38"
                 }
             }
         },
@@ -193,7 +193,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb.git",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "ISED_ISDE_38"
                 }
             }
         }
@@ -217,7 +217,7 @@
         }
     },
     "require": {
-        "mnsami/composer-custom-directory-installer": "1.1.*",
+        "ised-isde-canada/composer-custom-directory-installer": "1.1.*",
         "ised-isde-canada/moodle": "1.0",
         "ised-isde-canada/moodle-mod_customcert": "1.0",
         "ised-isde-canada/moodle-availability_language": "1.0",
