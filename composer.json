@@ -249,7 +249,7 @@
             "cp -r php-pre-start dist/",
             "rm dist/composer.json",
             "rm dist/composer.lock",
-            "cp -r dist/* .",
+            "shopt -s dotglob && cp -r dist/* .",
             "rm -rf dist",
             "chmod -R g+w ."
         ]
