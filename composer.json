@@ -196,6 +196,19 @@
                     "reference": "ISED_ISDE_38"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ised-isde-canada/remote-manage",
+                "version": "1.0",
+                "type": "library",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/remote-manage.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         }
    ],
     "extra": {

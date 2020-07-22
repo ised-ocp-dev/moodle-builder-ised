@@ -137,6 +137,16 @@
             "type": "library"
         },
         {
+            "name": "ised-isde-canada/remote-manage",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ised-isde-canada/remote-manage.git",
+                "reference": "master"
+            },
+            "type": "library"
+        },
+        {
             "name": "ised-isde-canada/composer-custom-directory-installer",
             "version": "1.1.1",
             "source": {
