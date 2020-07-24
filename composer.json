@@ -232,6 +232,7 @@
     "require": {
         "ised-isde-canada/composer-custom-directory-installer": "1.1.*",
         "ised-isde-canada/moodle": "1.0",
+        "aws/aws-sdk-php": "^3.145",
         "ised-isde-canada/moodle-mod_customcert": "1.0",
         "ised-isde-canada/moodle-availability_language": "1.0",
         "ised-isde-canada/moodle-block_admin_presets": "1.0",
