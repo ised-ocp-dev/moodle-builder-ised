@@ -265,7 +265,7 @@
             "rm dist/composer.lock",
             "shopt -s dotglob && cp -r dist/* .",
             "rm -rf dist",
-            "chmod -R g+w ."
+            "#chmod -R g+w ."
         ]
     }
 }
