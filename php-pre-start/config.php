@@ -320,7 +320,7 @@ $CFG->admin = 'admin';
 //
 // This setting will cause the userdate() function not to fix %d in
 // date strings, and just let them show with a zero prefix.
-//      $CFG->nofixday = true;
+$CFG->nofixday = true;
 //
 // This setting will make some graphs (eg user logs) use lines instead of bars
 //      $CFG->preferlinegraphs = true;
