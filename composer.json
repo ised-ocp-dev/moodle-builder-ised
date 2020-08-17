@@ -258,14 +258,15 @@
             "cd dist && git cherry-pick -n origin/MDL-68257-M38",
             "cd dist && git cherry-pick -n origin/MDL-68337-M38",
             "cd dist && git cherry-pick -n origin/MDL-68766b-M38",
-            "cp -r .s2i dist/",
-            "cp -r httpd-cfg dist/",
-            "cp -r php-pre-start dist/",
-            "rm dist/composer.json",
-            "rm dist/composer.lock",
+            "mv .s2i dist/",
+            "mv httpd-cfg dist/",
+            "mv php-pre-start dist/",
+            "mv dist/php-pre-start/config.php dist/",
+            "mv dist/php-pre-start/defaults.php dist/local/",
+            "mv dist/composer.* dist/php-pre-start/",
             "shopt -s dotglob && cp -r dist/* .",
             "rm -rf dist",
-            "#chmod -R g+w ."
+            "rm README.md"
         ]
     }
 }
