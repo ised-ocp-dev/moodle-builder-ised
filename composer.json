@@ -266,7 +266,8 @@
             "mv dist/composer.* dist/php-pre-start/",
             "shopt -s dotglob && cp -r dist/* .",
             "rm -rf dist",
-            "rm README.md"
+            "rm README.md",
+            "ln -s /opt/app-root/src/vendor/ised-isde-canada/remote-manage/manage.php manage.php"
         ]
     }
 }
