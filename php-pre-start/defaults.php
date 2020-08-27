@@ -30,7 +30,7 @@ defined('MOODLE_INTERNAL') || die();
 $filterlist = ['multilang2', 'filtercodes'];
 
 // GCWeb theme.
-$theme = 'gcweb';
+$themename = 'gcweb';
 
 // French, French Canadian - TODO (for eval?): Install French inclusive and French Workplace language packs.
 $pack = ['fr', 'fr_ca']; //, 'fr_incl', 'fr_wp'];
@@ -1091,10 +1091,10 @@ foreach ($filterlist as $key => $filtername) {
 $defaults['moodle']['stringfilters'] = implode(',', $filterlist);
 
 // Set default theme.
-if (file_exists($CFG->dirroot . '/theme/' . $theme)) {
+if (file_exists($CFG->dirroot . '/theme/' . $themename)) {
     // Set the default theme.
     // Load the theme to make sure it is valid.
-    $theme = theme_config::load( . $theme);
+    $theme = theme_config::load($themename);
     // Get the config argument for the chosen device.
     $themename = core_useragent::get_device_type_cfg_var_name('default');
     set_config($themename, $theme->name);
