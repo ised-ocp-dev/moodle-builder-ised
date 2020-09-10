@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1897dc8e326ca6b37a8de553faf79265",
+    "content-hash": "6b10cb28efbfa4751e2209e07df8f108",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -467,6 +467,16 @@
             "type": "library"
         },
         {
+            "name": "ised-isde-canada/moodle-mod_subcourse",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ised-isde-canada/moodle-mod_subcourse.git",
+                "reference": "ISED_ISDE_38"
+            },
+            "type": "library"
+        },
+        {
             "name": "ised-isde-canada/moodle-theme_gcweb",
             "version": "1.0",
             "source": {
@@ -743,6 +753,20 @@
                 "portable",
                 "shim"
             ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-07-14T12:35:20+00:00"
         }
     ],
@@ -753,5 +777,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }

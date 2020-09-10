@@ -234,6 +234,7 @@
         "ised-isde-canada/moodle": "1.0",
         "aws/aws-sdk-php": "^3.145",
         "ised-isde-canada/moodle-mod_customcert": "1.0",
+        "ised-isde-canada/moodle-mod_subcourse": "1.0",
         "ised-isde-canada/moodle-availability_language": "1.0",
         "ised-isde-canada/moodle-block_admin_presets": "1.0",
         "ised-isde-canada/moodle-block_configurablereports": "1.0",
