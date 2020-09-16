@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b10cb28efbfa4751e2209e07df8f108",
+    "content-hash": "d1ae1439a3b7761759d234b60cf1c6e3",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.147.4",
+            "version": "3.154.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5a393f4be30df12e2517bba104002dbb21da5122"
+                "reference": "199a3e1ee89c38251a4a47433560faf5d6a3ef14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5a393f4be30df12e2517bba104002dbb21da5122",
-                "reference": "5a393f4be30df12e2517bba104002dbb21da5122",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/199a3e1ee89c38251a4a47433560faf5d6a3ef14",
+                "reference": "199a3e1ee89c38251a4a47433560faf5d6a3ef14",
                 "shasum": ""
             },
             "require": {
@@ -89,7 +89,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-07-23T18:17:54+00:00"
+            "time": "2020-09-16T18:16:18+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -300,55 +300,13 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/composer-custom-directory-installer.git",
-                "reference": "8cc82e0c5801cc3bf53ba452afdcaa5c6ff645a5"
+                "reference": "master"
             },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mnsami/composer-custom-directory-installer/zipball/8cc82e0c5801cc3bf53ba452afdcaa5c6ff645a5",
-                "reference": "8cc82e0c5801cc3bf53ba452afdcaa5c6ff645a5",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0",
-                "php": ">=5.3"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": [
-                    "Composer\\CustomDirectoryInstaller\\LibraryPlugin",
-                    "Composer\\CustomDirectoryInstaller\\PearPlugin",
-                    "Composer\\CustomDirectoryInstaller\\PluginPlugin"
-                ],
-                "branch-alias": {
-                    "dev-master": "1.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Composer\\CustomDirectoryInstaller": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mina Nabil Sami",
-                    "email": "mina.nsami@gmail.com"
-                }
-            ],
-            "description": "A composer plugin, to help install packages of different types in custom paths.",
-            "keywords": [
-                "composer",
-                "composer-installer",
-                "composer-plugin"
-            ],
-            "time": "2016-05-25T08:26:02+00:00"
+            "type": "library"
         },
         {
             "name": "ised-isde-canada/moodle",
-            "version": "1.0",
+            "version": "v38.20200519",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle.git",
@@ -358,7 +316,7 @@
         },
         {
             "name": "ised-isde-canada/moodle-availability_language",
-            "version": "1.0",
+            "version": "v38.2019051200",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-availability_language.git",
@@ -368,7 +326,7 @@
         },
         {
             "name": "ised-isde-canada/moodle-block_admin_presets",
-            "version": "1.0",
+            "version": "v38.2019052000",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-block_admin_presets.git",
@@ -378,7 +336,7 @@
         },
         {
             "name": "ised-isde-canada/moodle-block_configurablereports",
-            "version": "1.0",
+            "version": "v38.2019122000",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-block_configurablereports.git",
@@ -388,7 +346,7 @@
         },
         {
             "name": "ised-isde-canada/moodle-filter_filtercodes",
-            "version": "1.0",
+            "version": "v38.2019111702",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-filter_filtercodes.git",
@@ -398,7 +356,7 @@
         },
         {
             "name": "ised-isde-canada/moodle-filter_multilang2",
-            "version": "1.0",
+            "version": "v38.2019111900",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-filter_multilang2.git",
@@ -408,7 +366,7 @@
         },
         {
             "name": "ised-isde-canada/moodle-local_adminer",
-            "version": "1.0",
+            "version": "v38.2020020400",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-local_adminer.git",
@@ -418,7 +376,7 @@
         },
         {
             "name": "ised-isde-canada/moodle-local_contact",
-            "version": "1.0",
+            "version": "v38.2019111700",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-local_contact.git",
@@ -428,7 +386,7 @@
         },
         {
             "name": "ised-isde-canada/moodle-local_isedisde",
-            "version": "1.0",
+            "version": "v38.2020012900",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-local_isedisde.git",
@@ -438,7 +396,7 @@
         },
         {
             "name": "ised-isde-canada/moodle-local_login",
-            "version": "1.0",
+            "version": "v38.2020011900",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-local_login.git",
@@ -448,7 +406,7 @@
         },
         {
             "name": "ised-isde-canada/moodle-local_mailtest",
-            "version": "1.0",
+            "version": "v38.2019111700",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-local_mailtest.git",
@@ -458,7 +416,7 @@
         },
         {
             "name": "ised-isde-canada/moodle-mod_customcert",
-            "version": "1.0",
+            "version": "v38.2019111802",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-mod_customcert.git",
@@ -468,7 +426,7 @@
         },
         {
             "name": "ised-isde-canada/moodle-mod_subcourse",
-            "version": "1.0",
+            "version": "v38.2019020100",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-mod_subcourse.git",
@@ -478,7 +436,7 @@
         },
         {
             "name": "ised-isde-canada/moodle-theme_gcweb",
-            "version": "1.0",
+            "version": "v38.2020022008",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb.git",
@@ -487,36 +445,26 @@
             "type": "library"
         },
         {
-            "name": "ised-isde-canada/remote-manage",
-            "version": "1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ised-isde-canada/remote-manage.git",
-                "reference": "master"
-            },
-            "type": "library"
-        },
-        {
             "name": "mtdowling/jmespath.php",
-            "version": "2.5.0",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jmespath/jmespath.php.git",
-                "reference": "52168cb9472de06979613d365c7f1ab8798be895"
+                "reference": "42dae2cbd13154083ca6d70099692fef8ca84bfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/52168cb9472de06979613d365c7f1ab8798be895",
-                "reference": "52168cb9472de06979613d365c7f1ab8798be895",
+                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/42dae2cbd13154083ca6d70099692fef8ca84bfb",
+                "reference": "42dae2cbd13154083ca6d70099692fef8ca84bfb",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0",
-                "symfony/polyfill-mbstring": "^1.4"
+                "php": "^5.4 || ^7.0 || ^8.0",
+                "symfony/polyfill-mbstring": "^1.17"
             },
             "require-dev": {
-                "composer/xdebug-handler": "^1.2",
-                "phpunit/phpunit": "^4.8.36|^7.5.15"
+                "composer/xdebug-handler": "^1.4",
+                "phpunit/phpunit": "^4.8.36 || ^7.5.15"
             },
             "bin": [
                 "bin/jp.php"
@@ -524,7 +472,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5-dev"
+                    "dev-master": "2.6-dev"
                 }
             },
             "autoload": {
@@ -551,7 +499,7 @@
                 "json",
                 "jsonpath"
             ],
-            "time": "2019-12-30T18:03:34+00:00"
+            "time": "2020-07-31T21:01:56+00:00"
         },
         {
             "name": "psr/http-client",
@@ -694,7 +642,7 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.18.0",
+            "version": "v1.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
