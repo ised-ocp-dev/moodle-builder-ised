@@ -1,5 +1,5 @@
 {
-    "name": "ised-isde-canada/moodle-builder-ised",
+    "name": "ised-isde-canada/moodle-builder-test",
     "license": "GPL-3.0-or-later",
     "description": "ISED Builder for Moodle",
     "type": "project",
@@ -8,12 +8,12 @@
         {
             "type": "package",
             "package": {
-                "name": "ised-isde-canada/composer-custom-directory-installer",
-                "version": "1.1.1",
+                "name": "ised-isde-canada/moodle",
+                "version": "1.0",
                 "source": {
-                    "url": "https://github.com/ised-isde-canada/composer-custom-directory-installer.git",
+                    "url": "https://github.com/ised-isde-canada/moodle.git",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "v38.20200519"
                 }
             }
         },
@@ -32,6 +32,162 @@
         {
             "type": "package",
             "package": {
+                "name": "ised-isde-canada/moodle-mod_customcert",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle-mod_customcert.git",
+                    "type": "git",
+                    "reference": "v38.2019111802"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ised-isde-canada/moodle-mod_subcourse",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle-mod_subcourse.git",
+                    "type": "git",
+                    "reference": "v38.2019020100"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ised-isde-canada/moodle-availability_language",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle-availability_language.git",
+                    "type": "git",
+                    "reference": "v38.2019051200"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ised-isde-canada/moodle-block_admin_presets",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle-block_admin_presets.git",
+                    "type": "git",
+                    "reference": "v38.2019052000"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ised-isde-canada/moodle-block_configurablereports",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle-block_configurablereports.git",
+                    "type": "git",
+                    "reference": "v38.2019122000"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ised-isde-canada/moodle-filter_filtercodes",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle-filter_filtercodes.git",
+                    "type": "git",
+                    "reference": "v38.2019111702"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ised-isde-canada/moodle-filter_multilang2",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle-filter_multilang2.git",
+                    "type": "git",
+                    "reference": "v38.2019111900"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ised-isde-canada/moodle-local_adminer",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle-local_adminer.git",
+                    "type": "git",
+                    "reference": "v38.2020020400"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ised-isde-canada/moodle-local_contact",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle-local_contact.git",
+                    "type": "git",
+                    "reference": "v38.2019111700"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ised-isde-canada/moodle-local_mailtest",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle-local_mailtest.git",
+                    "type": "git",
+                    "reference": "v38.2019111700"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ised-isde-canada/moodle-local_isedisde",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle-local_isedisde.git",
+                    "type": "git",
+                    "reference": "v38.2020012900"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ised-isde-canada/moodle-local_login",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle-local_login.git",
+                    "type": "git",
+                    "reference": "v38.2020011900"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ised-isde-canada/moodle-theme_gcweb",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb.git",
+                    "type": "git",
+                    "reference": "v38.2020022008"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "ised-isde-canada/remote-manage",
                 "version": "1.0",
                 "type": "library",
@@ -43,174 +199,10 @@
             }
         },
         {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle",
-                "version": "v38.20200519",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle-mod_customcert",
-                "version": "v38.2019111802",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-mod_customcert.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle-mod_subcourse",
-                "version": "v38.2019020100",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-mod_subcourse.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle-availability_language",
-                "version": "v38.2019051200",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-availability_language.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle-block_admin_presets",
-                "version": "v38.2019052000",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-block_admin_presets.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle-block_configurablereports",
-                "version": "v38.2019122000",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-block_configurablereports.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle-filter_filtercodes",
-                "version": "v38.2019111702",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-filter_filtercodes.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle-filter_multilang2",
-                "version": "v38.2019111900",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-filter_multilang2.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle-local_adminer",
-                "version": "v38.2020020400",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-local_adminer.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle-local_contact",
-                "version": "v38.2019111700",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-local_contact.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle-local_mailtest",
-                "version": "v38.2019111700",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-local_mailtest.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle-local_isedisde",
-                "version": "v38.2020012900",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-local_isedisde.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle-local_login",
-                "version": "v38.2020011900",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-local_login.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde-canada/moodle-theme_gcweb",
-                "version": "v38.2020022008",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb.git",
-                    "type": "git",
-                    "reference": "ISED_ISDE_38"
-                }
-            }
+            "type": "vcs",
+            "url": "https://github.com/moodlehq/php-webdriver.git"
         }
-   ],
+    ],
     "extra": {
         "installer-paths": {
             "./dist": ["ised-isde-canada/moodle"],
@@ -230,22 +222,30 @@
         }
     },
     "require": {
+        "php": ">=7.2",
+        "mnsami/composer-custom-directory-installer": "1.1.*",
+        "ised-isde-canada/moodle": "1.0",
         "aws/aws-sdk-php": "^3.145",
-        "ised-isde-canada/composer-custom-directory-installer": "1.1.*",
-        "ised-isde-canada/moodle": "v38.20200519",
-        "ised-isde-canada/moodle-mod_customcert": "v38.2019111802",
-        "ised-isde-canada/moodle-mod_subcourse": "v38.2019020100",
-        "ised-isde-canada/moodle-availability_language": "v38.2019051200",
-        "ised-isde-canada/moodle-block_admin_presets": "v38.2019052000",
-        "ised-isde-canada/moodle-block_configurablereports": "v38.2019122000",
-        "ised-isde-canada/moodle-filter_filtercodes": "v38.2019111702",
-        "ised-isde-canada/moodle-filter_multilang2": "v38.2019111900",
-        "ised-isde-canada/moodle-local_adminer": "v38.2020020400",
-        "ised-isde-canada/moodle-local_contact": "v38.2019111700",
-        "ised-isde-canada/moodle-local_mailtest": "v38.2019111700",
-        "ised-isde-canada/moodle-local_isedisde": "v38.2020012900",
-        "ised-isde-canada/moodle-local_login": "v38.2020011900",
-        "ised-isde-canada/moodle-theme_gcweb": "v38.2020022008"
+        "ised-isde-canada/moodle-mod_customcert": "1.0",
+        "ised-isde-canada/moodle-mod_subcourse": "1.0",
+        "ised-isde-canada/moodle-availability_language": "1.0",
+        "ised-isde-canada/moodle-block_admin_presets": "1.0",
+        "ised-isde-canada/moodle-block_configurablereports": "1.0",
+        "ised-isde-canada/moodle-filter_filtercodes": "1.0",
+        "ised-isde-canada/moodle-filter_multilang2": "1.0",
+        "ised-isde-canada/moodle-local_adminer": "1.0",
+        "ised-isde-canada/moodle-local_contact": "1.0",
+        "ised-isde-canada/moodle-local_mailtest": "1.0",
+        "ised-isde-canada/moodle-local_isedisde": "1.0",
+        "ised-isde-canada/moodle-local_login": "1.0",
+        "ised-isde-canada/moodle-theme_gcweb": "1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "7.5.*",
+        "phpunit/dbunit": "4.0.*",
+        "moodlehq/behat-extension": "3.38.5",
+        "mikey179/vfsstream": "^1.6",
+        "instaclick/php-webdriver": "dev-local as 1.x-dev"
     },
     "scripts": {
         "post-install-cmd": [
