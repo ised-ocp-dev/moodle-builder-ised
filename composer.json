@@ -249,16 +249,6 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "cd dist && git cherry-pick -n origin/MDL-63219-M38",
-            "cd dist && git cherry-pick -n origin/MDL-66856-M38",
-            "cd dist && git cherry-pick -n origin/MDL-67554-M38",
-            "cd dist && git cherry-pick -n origin/MDL-67802-M38",
-            "cd dist && git cherry-pick -n origin/MDL-52810-M38",
-            "cd dist && git cherry-pick -n origin/MDL-61880-M38",
-            "cd dist && git cherry-pick -n origin/MDL-64969-M38",
-            "cd dist && git cherry-pick -n origin/MDL-68257-M38",
-            "cd dist && git cherry-pick -n origin/MDL-68337-M38",
-            "cd dist && git cherry-pick -n origin/MDL-68766b-M38",
             "mv .s2i dist/",
             "mv httpd-cfg dist/",
             "mv php-pre-start dist/",
@@ -268,7 +258,17 @@
             "shopt -s dotglob && cp -r dist/* .",
             "rm -rf dist",
             "rm README.md",
-            "ln -s /opt/app-root/src/vendor/ised-isde-canada/remote-manage/manage.php manage.php"
+            "ln -s /opt/app-root/src/vendor/ised-isde-canada/remote-manage/manage.php manage.php",
+            "git cherry-pick -n origin/MDL-63219-M38",
+            "git cherry-pick -n origin/MDL-66856-M38",
+            "git cherry-pick -n origin/MDL-67554-M38",
+            "git cherry-pick -n origin/MDL-67802-M38",
+            "git cherry-pick -n origin/MDL-52810-M38",
+            "git cherry-pick -n origin/MDL-61880-M38",
+            "git cherry-pick -n origin/MDL-64969-M38",
+            "git cherry-pick -n origin/MDL-68257-M38",
+            "git cherry-pick -n origin/MDL-68337-M38",
+            "git cherry-pick -n origin/MDL-68766b-M38"
         ]
     }
 }
