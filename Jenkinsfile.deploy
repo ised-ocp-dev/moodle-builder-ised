@@ -1,12 +1,12 @@
-@Library(value="ised-cicd-lib@COPS-453-apply-yaml") _
+@Library(value="ised-cicd-lib") _
 
 pipeline {
 	agent none
-   	
+
     options {
         disableConcurrentBuilds()
     }
-   	
+
    	environment {
 		// GLobal Vars
 		IMAGE_NAME = "dsdmdl-moodle"
