@@ -1,7 +1,7 @@
 {
     "name": "ised-isde-canada/moodle-builder",
     "license": "GPL-3.0-or-later",
-    "description": "ISED Builder for Moodle",
+    "description": "ISED Builder for Moodle 3.8",
     "type": "project",
     "homepage": "http://www.ic.gc.ca/",
     "repositories": [
@@ -25,7 +25,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-builder-ised.git",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "MOODLE_38_STABLE"
                 }
             }
         },
