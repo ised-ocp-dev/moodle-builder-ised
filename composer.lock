@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "058551e6662cd48f2b879b9037d8223b",
+    "content-hash": "89998b55f49b1f5423b5553bcbef47e6",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -417,6 +417,16 @@
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb.git",
                 "reference": "v38.2020022008"
+            },
+            "type": "library"
+        },
+        {
+            "name": "ised-isde-canada/remote-manage",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ised-isde-canada/remote-manage.git",
+                "reference": "master"
             },
             "type": "library"
         },
@@ -4912,7 +4922,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2"
+        "php": ">=7.3"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
