@@ -19,7 +19,7 @@ pipeline {
     	stage('release') {
 			steps {
 				script{
-					release.releaseS2IFromDir("${IMAGE_NAME}", "${BUILD_NAME}", ".")
+					release.releaseApp("${IMAGE_NAME}")
 		    	}
 			}
     	}
