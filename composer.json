@@ -259,7 +259,7 @@
             "shopt -s dotglob && cp -r dist/* .",
             "rm -rf dist",
             "rm README.md",
-            "ln -s /opt/app-root/src/vendor/ised-isde-canada/remote-manage/manage.php manage.php",
+            "ln -s /opt/app-root/src/vendor/ised-isde-canada/remote-manage/rmanage.php rmanage.php",
             "git cherry-pick -n origin/MDL-63219-M38",
             "git cherry-pick -n origin/MDL-66856-M38",
             "git cherry-pick -n origin/MDL-67554-M38",
