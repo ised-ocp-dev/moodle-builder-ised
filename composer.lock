@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "89998b55f49b1f5423b5553bcbef47e6",
+    "content-hash": "88250c73a47dc8efb0fcc00ac9efa2f0",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -421,7 +421,7 @@
             "type": "library"
         },
         {
-            "name": "ised-isde-canada/remote-manage",
+            "name": "ised/remote-manage",
             "version": "1.0",
             "source": {
                 "type": "git",
@@ -1763,6 +1763,16 @@
                 "source": "https://github.com/moodlehq/php-webdriver/tree/local"
             },
             "time": "2019-08-14T02:10:24+00:00"
+        },
+        {
+            "name": "ised-isde-canada/remote-manage",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ised-isde-canada/remote-manage.git",
+                "reference": "master"
+            },
+            "type": "library"
         },
         {
             "name": "mikey179/vfsstream",
