@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3e93c3434111240b20cd68cb213adbc",
+    "content-hash": "fedafc09f1c76b62f23ab33b1b8c948a",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -416,7 +416,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb.git",
-                "reference": "v38.2020022008"
+                "reference": "v38.2020091100"
             },
             "type": "library"
         },
