@@ -11,6 +11,8 @@ RUN yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x
     yum --disablerepo=rhel-8-for-x86_64-appstream-rpms install -y postgresql12 && \
     yum clean all
 
+RUN yum install -y ghostscript
+
 RUN sed -i 's/Options Indexes FollowSymLinks/Options FollowSymLinks/' /etc/httpd/conf/httpd.conf
 
 COPY / /opt/app-root/src
