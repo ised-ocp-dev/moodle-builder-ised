@@ -18,18 +18,34 @@ RUN sed -i 's/Options Indexes FollowSymLinks/Options FollowSymLinks/' /etc/httpd
 COPY / /opt/app-root/src
 
 WORKDIR /opt/app-root/src
-
 RUN chgrp -R 0 /opt/app-root/src && \
     chmod -R g=u+wx /opt/app-root/src
 
-#do not run composer as root, according to the documentation
+RUN git clone https://github.com/tmuras/moosh.git /opt/app-root/moosh && \
+    chgrp -R 0 /opt/app-root/moosh && \
+    chmod -R g=u+wx /opt/app-root/moosh && \
+    ln -s /opt/app-root/moosh/moosh.php /usr/local/bin/moosh
+
+# Do not run composer as root, according to the documentation
 USER 1001
+
+WORKDIR /opt/app-root/src
+
 RUN ./composer.phar install --no-interaction --no-ansi --optimize-autoloader
+
+WORKDIR /opt/app-root/moosh
+
+RUN /opt/app-root/src/composer.phar install --no-interaction --no-ansi --optimize-autoloader
+
+WORKDIR /opt/app-root/src
 
 USER root
 
 RUN chgrp -R 0 /opt/app-root/src && \
     chmod -R g=u+wx /opt/app-root/src
+
+RUN chgrp -R 0 /opt/app-root/moosh && \
+    chmod -R g=u+wx /opt/app-root/moosh
 
 RUN chgrp -R 0 /run/httpd && \
     chmod -R g=u /run/httpd
