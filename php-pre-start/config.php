@@ -615,7 +615,7 @@ $CFG->nofixday = true;
 // debug messages, this overrides the debug flag in $CFG->debug and $CFG->debugdisplay
 // for these users only.
 // $CFG->debugusers = '2';
-$CFG->debugusers = '$_ENV["DEBUGUSERS"];';
+$CFG->debugusers = '$_ENV["MOODLE_DEBUGUSERS"];';
 
 // You can enable smtp debuging. You will still need to set Display debug to
 // DEVELOPER: extra Moodle messages for developers and enable Display debug messages
