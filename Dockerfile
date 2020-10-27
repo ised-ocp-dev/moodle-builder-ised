@@ -5,7 +5,7 @@ USER root
 # Composer
 ENV COMPOSER_FILE=composer-installer
 RUN curl -s -o $COMPOSER_FILE https://getcomposer.org/installer && \
-    php <$COMPOSER_FILE
+    php $COMPOSER_FILE --version=1.10.15
 
 # Postgres Client - Required for the backup system.
 RUN yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
