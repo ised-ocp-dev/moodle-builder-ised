@@ -27,6 +27,8 @@ defined('MOODLE_INTERNAL') || die();
 
 if (is_major_upgrade_required()) {
 
+    // Note: This just the settings that are NOT DEFAULT.
+
     echo 'Applying custom defaults to Moodle...<br>' . PHP_EOL;
 
     // Multi-Language (v2) and FilterCodes filters.
@@ -91,87 +93,189 @@ if (is_major_upgrade_required()) {
 {/ifadmin}
 ';
 
-// Just the settings that are not DEFAULT.
+    // =============================================
+    // SITE ADMINISTRATION > SITE ADMINISTRATION
+    // =============================================
 
-    $defaults['moodle']['theme'] = 'gcweb';
-    $defaults['moodle']['themelist'] = 'gcweb';
-    $defaults['moodle']['country'] = 'CA';
-    $defaults['moodle']['usecomments'] = '0';
-    $defaults['moodle']['usetags'] = '1';
-    $defaults['moodle']['messaging'] = '0';
-    $defaults['moodle']['enableblogs'] = '0';
-    $defaults['moodle']['timezone'] = 'America/Toronto';
-    $defaults['moodle']['autolang'] = '1';
-    $defaults['moodle']['lang'] = 'en';
-    $defaults['moodle']['langlist'] = 'en,fr_ca';
-    $defaults['moodle']['langmenu'] = '1';
-    // Install Language Packs
-    // Customize fr_ca/langconfig.php
-    // Customize en/langconfig.php
-    $defaults['moodle']['forceloginforprofileimage'] = '1';
-    $defaults['moodle']['cronclionly'] = '0';
-    $defaults['moodle']['cronremotepassword'] = $_ENV["CRON_PASSWORD"];
-    $defaults['enrol_guest']['usepasswordpolicy'] = '1';
+    // Advanced features.
+    $defaults['moodle']['usecomments'] = '1'; // Enable comments.
+    $defaults['moodle']['enablenotes'] = '0'; // Enable notes (by individual users).
+    $defaults['moodle']['usetags'] = '0';     // Enable tags functionality.
+    $defaults['moodle']['enableblogs'] = '0'; // Enable blogs.
+
+    // Location > Location Settings.
+    $defaults['moodle']['country'] = 'CA'; // Default Country.
+    $defaults['moodle']['timezone'] = 'America/Toronto'; // Default timezone.
+
+    // Language > Language Settings.
+    $defaults['moodle']['autolang'] = '0'; // Language Autodetect.
+    $defaults['moodle']['lang'] = 'en';    // Default Language.
+    $defaults['moodle']['langmenu'] = '1'; // Display language menu.
+    $defaults['moodle']['langlist'] = 'en,fr_ca'; // Languages on language menu.
+
+    // Install Language Packs.
+    get_string_manager()->reset_caches();
+    $controller = new tool_langimport\controller();
+    core_php_time_limit::raise();
+    $controller->install_languagepacks($pack);
+    get_string_manager()->reset_caches();
+
+    // TODO: Customize fr_ca/langconfig.php.
+    // TODO: Customize en/langconfig.php.
+    // TODO: Integrate Moodle Workplace English and French language pack.
+    // TODO: Integrate inclusive language packs (if not part of Workplace).
+
+    // Messaging > Messaging settings.
+    $defaults['moodle']['messaging'] = '0';   // Enable messaging system.
+
+    // Security > Site Security Settings.
+    $defaults['moodle']['forceloginforprofileimage'] = '1'; // Force users to log in to view user pictures.
+    $defaults['moodle']['cronclionly'] = '0'; // Cron execution via command line only.
+    $defaults['moodle']['cronremotepassword'] = $_ENV["CRON_PASSWORD"]; // Cron password for remote access.
+    // Security > Notifications.
     $defaults['moodle']['displayloginfailures'] = '1';
-    // Front page
-    // Front page when logged in
+
+    // TODO: Front page.
+    // TODO: Front page when logged in.
+
+    // Mobile app > Mobile Settings.
     $defaults['moodle']['enablemobilewebservice'] = '0'; // Enable web services for mobile devices.
+    // Mobile app > Mobile Appearance.
     $defaults['tool_mobile']['setuplink'] = ''; // App Download Page.
-    $defaults['moodle']['defaultpreference_maildisplay'] = '0';
-    // Custom User Profile Fields
+
+    // =============================================
+    // SITE ADMINISTRATION > USERS
+    // =============================================
+
+    // Accounts > User Default Preferences.
+    $defaults['moodle']['defaultpreference_maildisplay'] = '0'; // Email display: Hide my email address from non-priviledged users.
+
+    // Accounts > User Profile Fields (Custom).
     $defaults['moodle']['autologinguests'] = '1'; // Auto-login guests.
     $defaults['moodle']['hiddenuserfields'] = 'description,email,city,country,timezone,webpage,icqnumber,skypeid,yahooid,aimid,msnid,firstaccess,lastaccess,lastip,mycourses,groups,suspended'; // Hide user fields.
 
+    // TODO: Permissions > Define Roles.
+    // TODO: Permissions > Set certain users as Site Administrator.
+    // TODO: Permissions > See list of changes to default permissions.
+    // TODO: Permissions > Create new role (Tester).
+
     // Privacy and Policy > Privacy Settings.
     $defaults['tool_dataprivacy']['contactdataprotectionofficer'] = '1'; // Contact the privacy officer.
+
+    // =============================================
+    // SITE ADMINISTRATION > COURSES
+    // =============================================
 
     // Courses > Course Default Settings.
     $defaults['moodlecourse']['visible'] = '0'; // Visible: Hide.
     $defaults['moodlecourse']['hiddensections'] = '1'; // Hidden sections are completely invisible.
     $defaults['moodlecourse']['courseenddateenabled'] = '0'; // Course end date enaabled by default.
     $defaults['moodlecourse']['showgrades'] = '0'; // Show gradebook to students: No.
-    
+
     // Courses > Course Request.
     // TODO If not already done, rename Miscellaneous category to Unpublished and make it hidden.
-    
-    // Authentication.
-    // TODO: Locked user fields.
+
+    // Courses > Backups > General backup defaults.
+    $defaults['backup']['loglifetime'] = '60'; // Keep logs for (days).
+
+    // Create folder for backups.
+    if (!is_dir($CFG->dataroot . '/mbackups')) {
+        mkdir($CFG->dataroot . '/mbackups', $CFG->directorypermissions);
+    }
+    // TODO: Configure course backups.
+
+    // =============================================
+    // SITE ADMINISTRATION > PLUGINS
+    // =============================================
+
+    // Plugins > Authentication.
     $defaults['moodle']['authloginviaemail'] = '1'; // Allow log in via email.
     $defaults['moodle']['guestloginbutton'] = '1'; // Guest login button.
-    // Enrolments > Guest access
+    // TODO: Locked user fields.
+
+    // Plugins > Enrolments > Guest access.
     $defaults['enrol_guest | defaultenrol'] = '0'; // Add instance to new course.
     $defaults['enrol_guest | sendcoursewelcomemessage'] = '3'; // Send course welcome message from the no-reply address.
-    // TODO: Install Multi-Language Content (v2): On, Content and Headings
-    // TODO: FilterCodes: On, Content and Headings
-    // Logging.
-    $defaults['backup']['loglifetime'] = '60';
-    
-    // Media Players > VideoJS player.
+    $defaults['enrol_guest']['usepasswordpolicy'] = '1'; // Use Password Policy.
+
+    // Plugins > Enrolments > Self enrolment
+    $defaults['enrol_guest']['usepasswordpolicy'] = '1'; // Use Password Policy.
+
+    // Plugins > Manage Filters > Enable and re-order filters.
+    require_once($CFG->libdir . "/filterlib.php");
+    foreach ($filterlist as $key => $filtername) {
+        if (is_dir($CFG->dirroot . '/filter/' . $filtername)) {
+            filter_set_global_state($filtername, TEXTFILTER_ON, 1);
+        } else {
+            unset($filterlist[$key]);
+        }
+    }
+    $defaults['moodle']['stringfilters'] = implode(',', $filterlist);
+
+    // Plugins > Filters > H5P.
+    $defaults['filter_displayh5p']['allowedsources'] = '';
+
+    // Plugins > Filters > FilterCodes.
+    $defaults['filter_filtercodes']['disabled_customnav'] = '0';
+    $defaults['filter_filtercodes']['enable_customnav'] = '0';
+    $defaults['filter_filtercodes']['enable_scrape'] = '0';
+    $defaults['filter_filtercodes']['escapebraces'] = '1';
+
+    // Plugins > Local > Adminer.
+    $defaults['local_adminer']['startwithdb'] = '1';
+
+    // Plugins > Local > Contact.
+    $defaults['local_contact']['loginrequired'] = '0';
+    $defaults['local_contact']['nosubjectsitename'] = '0';
+    $defaults['local_contact']['senderaddress'] = '';
+    $defaults['format_singleactivity']['activitytype'] = 'page';
+
+    // Plugins > Media Players > VideoJS player.
     $defaults['media_videojs']['videoextensions'] = 'html_video,.mp4,.webm';
     $defaults['media_videojs']['audioextensions'] = 'html_audio,.mp3,.ogg';
     $defaults['media_videojs']['useflash'] = '0';
-    $defaults['moodle']['media_default_height'] = '480'; // Defa
-    $defaults['moodle']['media_default_width'] = '640';
+    $defaults['moodle']['media_default_height'] = '480'; // Default height.
+    $defaults['moodle']['media_default_width'] = '640';  // Default width.
     $defaults['moodle']['media_plugins_sortorder'] = 'videojs,youtube';
-    
-    // Questions > Manage Question Types
+
+    // Plugins > Question Types > Manage Question Types.
     // TODO: Disable Drag and Drop into text.
     // TODO: Disable Drag and Drop markers.
     // TODO: Disable Drag and Drop onto image.
-    
-    // Appearance > Calendar
+
+    // =============================================
+    // SITE ADMINISTRATION > APPEARANCE
+    // =============================================
+
+    // Appearance > Calendar.
     $defaults['moodle']['calendar_startwday'] = '0'; // Start of week: Sunday.
-    // Apperance > Navigation
-    $defaults['moodle']['defaulthomepage'] = '0';  // Default home page: 0=Site, 1=My home, 2=User preference
+
+    // Apperance > Navigation.
+    $defaults['moodle']['defaulthomepage'] = '0';  // Default home page: 0=Site, 1=My home, 2=User preference.
     $defaults['moodle']['allowguestmymoodle'] = '0'; // Allow guest access to dashboard: No.
     $defaults['moodle']['navshowfrontpagemods'] = '0'; // Show front page activities in the navigation.
-    // Appearance > Default Dashboard
+
+    // Appearance > Default Dashboard Page.
     // TODO: Remove unwanted blocks if they exist.
-    // Apperance > Theme Settings.
+
+    // Appearance > Themes > Theme Settings.
+    $defaults['moodle']['themelist'] = 'gcweb';
     $defaults['moodle']['allowuserblockhiding'] = '0';  // Disabled.
     $defaults['moodle']['custommenuitems'] = $custommenu; // Moodle custom menu.
     $defaults['moodle']['customusermenuitems'] = 'customusermenuitems'; // Moodle custom user menu items.
-    // Appearance > Themes > GCWeb
+
+    // Appearance > Themes > Theme Selector > Default.
+    $defaults['moodle']['theme'] = 'gcweb';
+    if (file_exists($CFG->dirroot . '/theme/' . $themename)) {
+        // Set the default theme.
+        // Load the theme to make sure it is valid.
+        $theme = theme_config::load($themename);
+        // Get the config argument for the chosen device.
+        $themename = core_useragent::get_device_type_cfg_var_name('default');
+        set_config($themename, $theme->name);
+    }
+
+    // Appearance > Themes > WET-BOEW-Moodle: GCWeb (settings).
     $defaults['theme_gcweb']['cardaspect'] = '0.5';
     $defaults['theme_gcweb']['cardbutton'] = 'btn-link';
     $defaults['theme_gcweb']['cardcategory'] = '1';
@@ -245,7 +349,7 @@ if (is_major_upgrade_required()) {
   margin-right: 10px;
   margin-left:10px;
 }
-#page-site-index .section .label  .contentwithoutlink { 
+#page-site-index .section .label  .contentwithoutlink {
   padding-right: 0px !important;
 }
 /* end of styling of action cards on top of homepage */
@@ -289,20 +393,29 @@ div.category-banner-summary {
   max-width: 576px;
   height:150px;
   display: table-cell;
-  vertical-align: middle;  
+  vertical-align: middle;
 }
 ';
-    
-    // Server > System Paths
+
+    // =============================================
+    // SITE ADMINISTRATION > SERVER
+    // =============================================
+
+    // Server > System Paths.
     $defaults['moodle']['pathtodu'] = '/usr/bin/du';
     $defaults['moodle']['pathtopython'] = '/usr/bin/python';
+
     // Server > Support Contact
     $defaults['moodle']['supportname'] = 'ISED-ISDE';
     $defaults['moodle']['supportemail'] = 'ic.cms-sgi.ic@canada.ca';
     // TODO: Support page URL will vary from one site to the next.
+
     // Server > Maintenance mode.
     $defaults['moodle']['maintenance_message'] = '<h2 lang="fr">Ce site est actuellement en maintenance et n\'est donc pas disponible présentement.</h2>';
-    // TODO: Configure OAuth2 settings.
+
+    // Server > OAuth 2 Service.
+    // TODO: Configure settings.
+
     // Server > Email > Outgoing mail configuration.
     $defaults['moodle']['smtphosts'] = trim($_ENV['SMTP_HOST']); // SMTP hosts.
     $defaults['moodle']['smtpsecure'] = trim(strtolower($_ENV['SMTP_SECURE'])); // SMTP security.
@@ -311,62 +424,7 @@ div.category-banner-summary {
     $defaults['moodle']['smtppass'] = trim($_ENV['SMTP_PASSWORD']); // SMTP password.
     $defaults['moodle']['smtpmaxbulk'] = '2'; // SMTP session limit.
     $defaults['moodle']['noreplyaddress'] = 'donotreply-nepasrepondre@ised-isde.canada.ca'; // No-reply address.
-    // Plugins > Filters > H5P
-    $defaults['filter_displayh5p']['allowedsources'] = '';
-    // Plugins > Filters > FilterCodes
-    $defaults['filter_filtercodes']['disabled_customnav'] = '0';
-    $defaults['filter_filtercodes']['enable_customnav'] = '0';
-    $defaults['filter_filtercodes']['enable_scrape'] = '0';
-    $defaults['filter_filtercodes']['escapebraces'] = '1';
-    // Plugins > Local > Adminer
-    $defaults['local_adminer']['startwithdb'] = '1';
-    // Plugins > Local > Contact
-    $defaults['local_contact']['loginrequired'] = '0';
-    $defaults['local_contact']['nosubjectsitename'] = '0';
-    $defaults['local_contact']['senderaddress'] = '';
-    $defaults['format_singleactivity']['activitytype'] = 'page';
 
     // Server > Session Handling.
     $defaults['moodle']['sessiontimeout'] = '14400'; // Timeout: 4 hours.
-
-    // Site Administrators
-    // TODO: Set certain users as Site Administrator.
-
-    // Permissions > Define Roles
-    // TODO: See list of changes to default permissions
-    // TODO: Create new role (Tester)
-
-    // Create folder for backups.
-    if (!is_dir($CFG->dataroot . '/mbackups')) {
-        mkdir($CFG->dataroot . '/mbackups', $CFG->directorypermissions);
-    }
-
-    // Enable filters.
-    require_once($CFG->libdir . "/filterlib.php");
-    foreach ($filterlist as $key => $filtername) {
-        if (is_dir($CFG->dirroot . '/filter/' . $filtername)) {
-            filter_set_global_state($filtername, TEXTFILTER_ON, 1);
-        } else {
-            unset($filterlist[$key]);
-        }
-    }
-    $defaults['moodle']['stringfilters'] = implode(',', $filterlist);
-
-    // Set default theme.
-    if (file_exists($CFG->dirroot . '/theme/' . $themename)) {
-        // Set the default theme.
-        // Load the theme to make sure it is valid.
-        $theme = theme_config::load($themename);
-        // Get the config argument for the chosen device.
-        $themename = core_useragent::get_device_type_cfg_var_name('default');
-        set_config($themename, $theme->name);
-    }
-
-    // Install language packs.
-    get_string_manager()->reset_caches();
-    $controller = new tool_langimport\controller();
-    core_php_time_limit::raise();
-    $controller->install_languagepacks($pack);
-    get_string_manager()->reset_caches();
-
 }
