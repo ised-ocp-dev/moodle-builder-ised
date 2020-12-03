@@ -554,7 +554,7 @@ $CFG->disableupdateautodeploy = true;
 // potentially cause a security risk. Set this option to true to disable editing
 // those config settings via the web. They will need to be set explicitly in the
 // config.php file
-//      $CFG->preventexecpath = true;
+$CFG->preventexecpath = true;
 //
 // Use the following flag to set userid for noreply user. If not set then moodle will
 // create dummy user and use -ve value as user id.
