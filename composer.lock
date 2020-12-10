@@ -296,7 +296,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-availability_language.git",
-                "reference": "v38.2019051200"
+                "reference": "v38.2020112700"
             },
             "type": "library"
         },
@@ -306,7 +306,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-block_admin_presets.git",
-                "reference": "v38.2019052000"
+                "reference": "v38.2020062417"
             },
             "type": "library"
         },
@@ -316,7 +316,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-block_configurablereports.git",
-                "reference": "v38.2019122000"
+                "reference": "v38.2020110300"
             },
             "type": "library"
         },
@@ -326,7 +326,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-filter_filtercodes.git",
-                "reference": "v38.2019111702"
+                "reference": "v38.2020112300"
             },
             "type": "library"
         },
@@ -336,7 +336,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-filter_multilang2.git",
-                "reference": "v38.2019111900"
+                "reference": "v38.2020101300"
             },
             "type": "library"
         },
@@ -346,7 +346,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-local_adminer.git",
-                "reference": "v38.2020020400"
+                "reference": "v38.2020120600"
             },
             "type": "library"
         },
@@ -356,7 +356,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-local_contact.git",
-                "reference": "v38.2019111700"
+                "reference": "v38.2020112300"
             },
             "type": "library"
         },
@@ -386,7 +386,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-local_mailtest.git",
-                "reference": "v38.2019111700"
+                "reference": "v38.2020092000"
             },
             "type": "library"
         },
@@ -396,7 +396,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-mod_customcert.git",
-                "reference": "v38.2019111802"
+                "reference": "v38.2019111805"
             },
             "type": "library"
         },
@@ -406,7 +406,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-mod_subcourse.git",
-                "reference": "v38.2019020100"
+                "reference": "v38.2020090602"
             },
             "type": "library"
         },
@@ -416,7 +416,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb.git",
-                "reference": "v38.2020091100"
+                "reference": "v38.2020121000"
             },
             "type": "library"
         },
