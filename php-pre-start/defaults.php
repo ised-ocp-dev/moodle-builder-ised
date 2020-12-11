@@ -423,7 +423,7 @@ div.category-banner-summary {
     $defaults['moodle']['smtpuser'] = trim($_ENV['SMTP_USER']); // SMTP username.
     $defaults['moodle']['smtppass'] = trim($_ENV['SMTP_PASSWORD']); // SMTP password.
     $defaults['moodle']['smtpmaxbulk'] = '2'; // SMTP session limit.
-    $defaults['moodle']['noreplyaddress'] = 'donotreply-nepasrepondre@ised-isde.canada.ca'; // No-reply address.
+    $defaults['moodle']['noreplyaddress'] = trim($ENV['SMTP_NOREPLY']); // No-reply address.
 
     // Server > Session Handling.
     $defaults['moodle']['sessiontimeout'] = '14400'; // Timeout: 4 hours.
