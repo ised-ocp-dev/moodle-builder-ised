@@ -46,50 +46,58 @@ if (is_major_upgrade_required()) {
     -###
     -{getstring}fulllistofcourses{/getstring}|/course/
 {ifloggedin}
-{fa fa-tachometer} {getstring}myhome{/getstring}|/my/
-{fa fa-graduation-cap} {getstring}mycourses{/getstring}
-{mycoursesmenu}
+    {fa fa-tachometer} {getstring}myhome{/getstring}|/my/
+    {fa fa-graduation-cap} {getstring}mycourses{/getstring}
+    {mycoursesmenu}
 {/ifloggedin}
 {fa fa-question} {getstring}help{/getstring}|/mod/page/view.php?id=97
 {ifminteacher}
-{fa fa-wrench} {getstring}admin{/getstring}
+    {fa fa-wrench} {getstring}admin{/getstring}
 {/ifminteacher}
 {ifmincreator}
--{getstring}administrationsite{/getstring}|/admin/search.php
--{toggleeditingmenu}
--###
+    -{getstring}administrationsite{/getstring}|/admin/search.php
+    -{toggleeditingmenu}
+    -Learn Moodle Basics (course)|https://learn.moodle.org/|<span lang="en">Learn.Moodle.org</span>{mlang fr} Anglais seulement{mlang}
+    {ifminmanager}
+        -Moodle Admin Basics (course)|https://learn.moodle.org/|<span lang="en">Learn.Moodle.org</span>{mlang fr} Anglais seulement{mlang}
+    {/ifminmanager}
+    -###
 {/ifmincreator}
-{ifminmanager}
--{getstring}user{/getstring}: {mlang en}Management{mlang}{mlang fr}Gestion{mlang}|/admin/user.php
-{ifadmin}
--{getstring}user{/getstring}: {getstring:mnet}profilefields{/getstring}|/user/profile/index.php
--###
-{/ifadmin}
--{getstring}course{/getstring}: {mlang en}Management{mlang}{mlang fr}Gestion{mlang}|/course/management.php
--{getstring}course{/getstring}: {getstring}createnew{/getstring}|/course/edit.php?category={categoryid}&returnto=topcat
-{/ifminmanager}
+{ifminsitemanager}
+    -{getstring}user{/getstring}: {mlang en}Management{mlang}{mlang fr}Gestion{mlang}|/admin/user.php
+    {ifadmin}
+        -{getstring}user{/getstring}: {getstring:mnet}profilefields{/getstring}|/user/profile/index.php
+        -###
+    {/ifadmin}
+{/ifminsitemanager}
+{ifmincreator}
+    -{getstring}course{/getstring}: {mlang en}Management{mlang}{mlang fr}Gestion{mlang}|/course/management.php
+    -{getstring}course{/getstring}: {getstring}createnew{/getstring}|/course/edit.php?category={categoryid}&returnto=topcat
+{/ifmincreator}
 {ifminteacher}
--{getstring}course{/getstring}: {getstring}restore{/getstring}|/backup/restorefile.php?contextid={coursecontextid}
-{ifincourse}
--{getstring}course{/getstring}: {getstring}backup{/getstring}|/backup/backup.php?id={courseid}
--{getstring}course{/getstring}: {getstring}participants{/getstring}|/user/index.php?id={courseid}
--{getstring}course{/getstring}: {getstring:badges}badges{/getstring}|/badges/index.php?type={courseid}
--{getstring}course{/getstring}: {getstring}reset{/getstring}|/course/reset.php?id={courseid}
--Course: Layoutit|https://www.layoutit.com/build" target="popup" onclick="window.open(\'https://www.layoutit.com/build\',\'popup\',\'width=1340,height=700\'); return false;|Bootstrap Page Builder
-{/ifincourse}
+    -{getstring}course{/getstring}: {getstring}restore{/getstring}|/backup/restorefile.php?contextid={coursecontextid}
+    {ifincourse}
+        -{getstring}course{/getstring}: {getstring}backup{/getstring}|/backup/backup.php?id={courseid}
+        -{getstring}course{/getstring}: {getstring}participants{/getstring}|/user/index.php?id={courseid}
+        -{getstring}course{/getstring}: {getstring:badges}badges{/getstring}|/badges/index.php?type={courseid}
+        -{getstring}course{/getstring}: {getstring}reset{/getstring}|/course/reset.php?id={courseid}
+        -###
+        -{mlang en}Tool{mlang}{mlang fr}Outil {mlang}: Layoutit|https://www.layoutit.com/build" target="popup" onclick="window.open('https://www.layoutit.com/build','popup','width=1340,height=700'); return false;|<span lang="en">Bootstrap Page Builder</span>{mlang fr} Anglais seulement{mlang}
+        -{mlang en}Tool{mlang}{mlang fr}Outil {mlang}: Pixlr|https://pixlr.com/" target="popup" onclick="window.open('https://pixlr.com/e/','popup','width=1340,height=700'); return false;|<span lang="en">Photo editor</span>{mlang fr} Anglais seulement{mlang}
+    {/ifincourse}
+    -###
 {/ifminteacher}
 {ifminmanager}
--###
--{getstring}site{/getstring}: System reports|/admin/category.php?category=reports
+    -{getstring}site{/getstring}: System reports|/admin/category.php?category=reports
 {/ifminmanager}
 {ifadmin}
--{getstring}site{/getstring}: {getstring:admin}additionalhtml{/getstring}|/admin/settings.php?section=additionalhtml
--{getstring}site{/getstring}: {getstring:admin}frontpage{/getstring}|/admin/settings.php?section=frontpagesettings|Including site name
--{getstring}site{/getstring}: {getstring:admin}plugins{/getstring}|/admin/plugins.php
--{getstring}site{/getstring}: {getstring:admin}supportcontact{/getstring}|/admin/settings.php?section=supportcontact
--{getstring}site{/getstring}: {getstring:admin}themesettings{/getstring}|/admin/settings.php?section=themesettings|Including custom menus, designer mode, theme in URL
--{getstring}site{/getstring}: {mlang en}WET-BOEW Theme (GCWeb){mlang}{mlang fr}Theme de la WET-BOEW (GCWeb){mlang}|/admin/settings.php?section=themesettinggcweb
--{getstring}site{/getstring}: {getstring}notifications{/getstring} ({getstring}admin{/getstring})|/admin/index.php
+    -{getstring}site{/getstring}: {getstring:admin}additionalhtml{/getstring}|/admin/settings.php?section=additionalhtml
+    -{getstring}site{/getstring}: {getstring:admin}frontpage{/getstring}|/admin/settings.php?section=frontpagesettings|Including site name
+    -{getstring}site{/getstring}: {getstring:admin}plugins{/getstring}|/admin/plugins.php
+    -{getstring}site{/getstring}: {getstring:admin}supportcontact{/getstring}|/admin/settings.php?section=supportcontact
+    -{getstring}site{/getstring}: {getstring:admin}themesettings{/getstring}|/admin/settings.php?section=themesettings|Including custom menus, designer mode, theme in URL
+    -{getstring}site{/getstring}: {mlang en}WET-BOEW Theme (GCWeb){mlang}{mlang fr}Theme de la WET-BOEW (GCWeb){mlang}|/admin/settings.php?section=themesettinggcweb
+    -{getstring}site{/getstring}: {getstring}notifications{/getstring} ({getstring}admin{/getstring})|/admin/index.php
 {/ifadmin}
 ';
 
