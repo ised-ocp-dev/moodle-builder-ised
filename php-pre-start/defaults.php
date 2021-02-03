@@ -82,8 +82,8 @@ if (is_major_upgrade_required()) {
         -{getstring}course{/getstring}: {getstring:badges}badges{/getstring}|/badges/index.php?type={courseid}
         -{getstring}course{/getstring}: {getstring}reset{/getstring}|/course/reset.php?id={courseid}
         -###
-        -{mlang en}Tool{mlang}{mlang fr}Outil {mlang}: Layoutit|https://www.layoutit.com/build" target="popup" onclick="window.open('https://www.layoutit.com/build','popup','width=1340,height=700'); return false;|<span lang="en">Bootstrap Page Builder</span>{mlang fr} Anglais seulement{mlang}
-        -{mlang en}Tool{mlang}{mlang fr}Outil {mlang}: Pixlr|https://pixlr.com/" target="popup" onclick="window.open('https://pixlr.com/e/','popup','width=1340,height=700'); return false;|<span lang="en">Photo editor</span>{mlang fr} Anglais seulement{mlang}
+        -{mlang en}Tool{mlang}{mlang fr}Outil {mlang}: Layoutit|https://www.layoutit.com/build" target="popup" onclick="window.open(\'https://www.layoutit.com/build\',\'popup\',\'width=1340,height=700\'); return false;|<span lang="en">Bootstrap Page Builder</span>{mlang fr} Anglais seulement{mlang}
+        -{mlang en}Tool{mlang}{mlang fr}Outil {mlang}: Pixlr|https://pixlr.com/" target="popup" onclick="window.open(\'https://pixlr.com/e/\',\'popup\',\'width=1340,height=700\'); return false;|<span lang="en">Photo editor</span>{mlang fr} Anglais seulement{mlang}
     {/ifincourse}
     -###
 {/ifminteacher}
