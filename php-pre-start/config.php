@@ -93,7 +93,7 @@ $CFG->dboptions = array(
 // If you need both intranet and Internet access please read
 // http://docs.moodle.org/en/masquerading
 
-$CFG->wwwroot   = $_ENV["MOODLE_URL"];
+$CFG->wwwroot = $_ENV["MOODLE_URL"];
 
 
 //=========================================================================
@@ -109,7 +109,7 @@ $CFG->wwwroot   = $_ENV["MOODLE_URL"];
 //
 // - On Windows systems you might specify something like 'c:\moodledata'
 
-$CFG->dataroot  = $_ENV["MOODLE_DATA_DIR"];
+$CFG->dataroot = $_ENV["MOODLE_DATA_DIR"];
 
 
 //=========================================================================
@@ -150,7 +150,8 @@ $CFG->admin = 'admin';
 // in PHP.ini, you can also specify it here if needed.
 // See details at: http://php.net/manual/en/function.date-default-timezone-set.php
 // List of time zones at: http://php.net/manual/en/timezones.php
-//     date_default_timezone_set('Australia/Perth');
+date_default_timezone_set('America/Toronto');
+
 //
 // Change the key pair lifetime for Moodle Networking
 // The default is 28 days. You would only want to change this if the key
@@ -475,14 +476,14 @@ $CFG->nofixday = true;
 // Use the following flag to completely disable the Available update notifications
 // feature and hide it from the server administration UI.
 //
-//      $CFG->disableupdatenotifications = true;
+$CFG->disableupdatenotifications = true;
 //
 // Use the following flag to completely disable the installation of plugins
 // (new plugins, available updates and missing dependencies) and related
 // features (such as cancelling the plugin installation or upgrade) via the
 // server administration web interface.
 //
-//      $CFG->disableupdateautodeploy = true;
+$CFG->disableupdateautodeploy = true;
 //
 // Use the following flag to disable the warning on the system notifications page
 // about present development libraries. This flag will not disable the warning within
@@ -601,6 +602,25 @@ $CFG->nofixday = true;
 //
 //      $CFG->disablelogintoken = true;
 //
+
+// Configure outgoing email using environment variables.
+$CFG->smtphosts = trim(!empty($_ENV['AWS_SMTP_HOST']) ? $_ENV['AWS_SMTP_HOST'] : $_ENV['SMTP_HOST']); // SMTP hosts.
+$CFG->smtpsecure = trim(strtolower(!empty($_ENV['AWS_SMTP_SECURE']) ? $_ENV['AWS_SMTP_SECURE'] : $_ENV['SMTP_SECURE'])); // SMTP security.
+$CFG->smtpuser = trim(!empty($_ENV['AWS_SMTP_USER']) ? $_ENV['AWS_SMTP_USER'] : $_ENV['SMTP_USER']); // SMTP username.
+$CFG->smtppass = trim(!empty($_ENV['AWS_SMTP_PASSWORD']) ? $_ENV['AWS_SMTP_PASSWORD'] : $_ENV['SMTP_PASSWORD']); // SMTP password.
+$CFG->noreplyaddress = trim(!empty($ENV['AWS_SMTP_NOREPLY']) ? $ENV['AWS_SMTP_NOREPLY'] : $ENV['SMTP_NOREPLY']); // No-reply address.
+$CFG->smtpauthtype = 'LOGIN'; // SMTP Auth Type.
+$CFG->smtpmaxbulk = '2'; // SMTP session limit.
+
+// Configure cron password using environment variable. Note: Must also match password programmed into cronjob's command line.
+if (!empty(trim($ENV['CRON_PASSWORD']))) {
+    $CFG->cronremotepassword = trim($ENV['CRON_PASSWORD']);
+}
+
+// Server > Support Contact
+$CFG->supportname = 'ISED-ISDE';
+$CFG->supportemail = 'ic.cms-sgi.ic@canada.ca';
+
 //=========================================================================
 // 7. SETTINGS FOR DEVELOPMENT SERVERS - not intended for production use!!!
 //=========================================================================
@@ -884,17 +904,26 @@ $CFG->debugsmtp = true;
 // On Windows it will be something like 'c:\gs\bin\gswin32c.exe' (make sure
 // there are no spaces in the path - if necessary copy the files 'gswin32c.exe'
 // and 'gsdll32.dll' to a new folder without a space in the path)
-//      $CFG->pathtogs = '/usr/bin/gs';
+$CFG->pathtogs = '/usr/bin/gs';
+
 //
 // Path to PHP CLI.
 // Probably something like /usr/bin/php. If you enter this, cron scripts can be
 // executed from admin web interface.
-// $CFG->pathtophp = '';
+//      $CFG->pathtophp = '';
+$CFG->pathtophp = '/usr/bin/php';
+
+//
+// Path to Python. Probably something like /usr/bin/python
+//      $CFG->pathtopython = '';
+
 //
 // Path to du.
 // Probably something like /usr/bin/du. If you enter this, pages that display
 // directory contents will run much faster for directories with a lot of files.
 //      $CFG->pathtodu = '';
+$CFG->pathtodu = '/usr/bin/du';
+
 //
 // Path to aspell.
 // To use spell-checking within the editor, you MUST have aspell 0.50 or later

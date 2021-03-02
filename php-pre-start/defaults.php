@@ -18,7 +18,7 @@
  * Default settings for WET-BOEW-Moodle based site.
  *
  * @package   gcweb_defaults
- * @copyright 2016-2020 TNG Consulting Inc.
+ * @copyright 2016-2021 TNG Consulting Inc.
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -113,13 +113,12 @@ if (is_major_upgrade_required()) {
 
     // Location > Location Settings.
     $defaults['moodle']['country'] = 'CA'; // Default Country.
-    $defaults['moodle']['timezone'] = 'America/Toronto'; // Default timezone.
 
     // Language > Language Settings.
     $defaults['moodle']['autolang'] = '0'; // Language Autodetect.
     $defaults['moodle']['lang'] = 'en';    // Default Language.
     $defaults['moodle']['langmenu'] = '1'; // Display language menu.
-    $defaults['moodle']['langlist'] = 'en,fr_ca'; // Languages on language menu.
+    $defaults['moodle']['langlist'] = 'en|English,fr_ca|Français'; // Languages on language menu.
 
     // Install Language Packs.
     get_string_manager()->reset_caches();
@@ -139,7 +138,8 @@ if (is_major_upgrade_required()) {
     // Security > Site Security Settings.
     $defaults['moodle']['forceloginforprofileimage'] = '1'; // Force users to log in to view user pictures.
     $defaults['moodle']['cronclionly'] = '0'; // Cron execution via command line only.
-    $defaults['moodle']['cronremotepassword'] = $_ENV["CRON_PASSWORD"]; // Cron password for remote access.
+    // The Cron password cronremotepassword setting is now set in config.php.
+
     // Security > Notifications.
     $defaults['moodle']['displayloginfailures'] = '1';
 
@@ -303,7 +303,6 @@ if (is_major_upgrade_required()) {
     $defaults['theme_gcweb']['footershowlogininfo'] = '0';
     $defaults['theme_gcweb']['footershowmoodledocs'] = '1';
     $defaults['theme_gcweb']['footershowmoodlelogo'] = '0';
-    $defaults['theme_gcweb']['footershowresetusertours'] = '0';
     $defaults['theme_gcweb']['footnote'] = '{mlang en}<li><a href="https://www.canada.ca/en/contact.html">Contact us</a></li><li><a href="https://www.canada.ca/en/transparency/terms.html">Terms and conditions</a></li><li><a href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a></li>{mlang}{mlang fr}<li><a href="https://www.canada.ca/fr/contact.html">Contactez-nous</a></li><li><a href="https://www.canada.ca/fr/transparence/avis.html">Avis</a></li><li><a href="https://www.canada.ca/fr/transparence/confidentialite.html">Confidentialité</a></li>{mlang}';
     $defaults['theme_gcweb']['hideconditionallyhidden'] = '1';
     $defaults['theme_gcweb']['hidefrontpagelinkstopages'] = '1';
@@ -410,12 +409,11 @@ div.category-banner-summary {
     // =============================================
 
     // Server > System Paths.
-    $defaults['moodle']['pathtodu'] = '/usr/bin/du';
-    $defaults['moodle']['pathtopython'] = '/usr/bin/python';
+    // Note: Moved to config.php
 
     // Server > Support Contact
-    $defaults['moodle']['supportname'] = 'ISED-ISDE';
-    $defaults['moodle']['supportemail'] = 'ic.cms-sgi.ic@canada.ca';
+    // Note: Moved to config.php
+
     // TODO: Support page URL will vary from one site to the next.
 
     // Server > Maintenance mode.
@@ -425,13 +423,7 @@ div.category-banner-summary {
     // TODO: Configure settings.
 
     // Server > Email > Outgoing mail configuration.
-    $defaults['moodle']['smtphosts'] = trim($_ENV['SMTP_HOST']); // SMTP hosts.
-    $defaults['moodle']['smtpsecure'] = trim(strtolower($_ENV['SMTP_SECURE'])); // SMTP security.
-    $defaults['moodle']['smtpauthtype'] = 'LOGIN'; // SMTP Auth Type.
-    $defaults['moodle']['smtpuser'] = trim($_ENV['SMTP_USER']); // SMTP username.
-    $defaults['moodle']['smtppass'] = trim($_ENV['SMTP_PASSWORD']); // SMTP password.
-    $defaults['moodle']['smtpmaxbulk'] = '2'; // SMTP session limit.
-    $defaults['moodle']['noreplyaddress'] = trim($ENV['SMTP_NOREPLY']); // No-reply address.
+    // Note: Moved to config.php
 
     // Server > Session Handling.
     $defaults['moodle']['sessiontimeout'] = '14400'; // Timeout: 4 hours.
