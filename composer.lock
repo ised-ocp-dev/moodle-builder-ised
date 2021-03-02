@@ -422,11 +422,11 @@
         },
         {
             "name": "ised-isde/remote-manage",
-            "version": "1.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/remote-manage.git",
-                "reference": "master"
+                "reference": "3.0.1"
             },
             "type": "library"
         },

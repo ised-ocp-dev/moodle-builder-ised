@@ -189,12 +189,12 @@
             "type": "package",
             "package": {
                 "name": "ised-isde/remote-manage",
-                "version": "1.0",
+                "version": "3.0.1",
                 "type": "library",
                 "source": {
                     "url": "https://github.com/ised-isde-canada/remote-manage.git",
                     "type": "git",
-                    "reference": "master"
+                    "reference": "3.0.1"
                 }
             }
         },
@@ -225,7 +225,7 @@
         "php": ">=7.3",
         "mnsami/composer-custom-directory-installer": "1.1.*",
         "aws/aws-sdk-php": "^3.145",
-        "ised-isde/remote-manage": "1.0",
+        "ised-isde/remote-manage": "3.0.1",
         "ised-isde/moodle": "1.0",
         "ised-isde/moodle-availability_language": "1.0",
         "ised-isde/moodle-block_admin_presets": "1.0",
