@@ -36,7 +36,7 @@ WORKDIR /opt/app-root/moosh
 RUN /opt/app-root/src/composer.phar install --no-interaction --no-ansi --optimize-autoloader
 
 WORKDIR /opt/app-root/src
-RUN ./composer.phar install --no-interaction --no-ansi --optimize-autoloader
+RUN ./composer.phar install --no-interaction --no-ansi --optimize-autoloader --no-dev
 
 USER root
 
