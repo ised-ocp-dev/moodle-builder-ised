@@ -326,7 +326,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-filter_filtercodes.git",
-                "reference": "v38.2020112300"
+                "reference": "v38.2020112301"
             },
             "type": "library"
         },

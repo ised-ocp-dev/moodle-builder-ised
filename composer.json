@@ -73,7 +73,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-filter_filtercodes.git",
                     "type": "git",
-                    "reference": "v38.2020112300"
+                    "reference": "v38.2020112301"
                 }
             }
         },
