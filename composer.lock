@@ -282,7 +282,7 @@
         },
         {
             "name": "ised-isde/moodle",
-            "version": "1.0",
+            "version": "3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle.git",
