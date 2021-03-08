@@ -1,5 +1,7 @@
 FROM registry.apps.dev.ocp-dev.ised-isde.canada.ca/ised-ci/sclorg-s2i-php:7.3
 
+# The following commands need to be executed as root.
+
 USER root
 
 # Composer
@@ -24,27 +26,33 @@ RUN chgrp -R 0 /opt/app-root/src && \
     chmod -R g=u+wx /opt/app-root/src
 
 # Moosh
-RUN git clone https://github.com/tmuras/moosh.git /opt/app-root/moosh && \
-    ln -s /opt/app-root/moosh/moosh.php /usr/local/bin/moosh
-RUN chgrp -R 0 /opt/app-root/moosh && \
-    chmod -R g=u+wx /opt/app-root/moosh
+# 2021-03-05 - Commented out as it has a broken dependency (see https://github.com/tmuras/moosh/issues/367)
+# RUN git clone https://github.com/tmuras/moosh.git /opt/app-root/moosh && \
+#    ln -s /opt/app-root/moosh/moosh.php /usr/local/bin/moosh
+# RUN chgrp -R 0 /opt/app-root/moosh && \
+#    chmod -R g=u+wx /opt/app-root/moosh
 
 # Do not run composer as root, according to the documentation.
+
 USER 1001
 
-WORKDIR /opt/app-root/moosh
-RUN /opt/app-root/src/composer.phar install --no-interaction --no-ansi --optimize-autoloader
+# Moosh (cont.)
+# WORKDIR /opt/app-root/moosh
+# RUN /opt/app-root/src/composer.phar install --no-interaction --no-ansi --optimize-autoloader
 
 WORKDIR /opt/app-root/src
 RUN ./composer.phar install --no-interaction --no-ansi --optimize-autoloader --no-dev
+
+# The following commands need to be executed as root.
 
 USER root
 
 RUN chgrp -R 0 /opt/app-root/src && \
     chmod -R g=u+wx /opt/app-root/src
 
-RUN chgrp -R 0 /opt/app-root/moosh && \
-    chmod -R g=u+wx /opt/app-root/moosh
+# Moosh (cont.)
+# RUN chgrp -R 0 /opt/app-root/moosh && \
+#    chmod -R g=u+wx /opt/app-root/moosh
 
 RUN chgrp -R 0 /run/httpd && \
     chmod -R g=u /run/httpd
