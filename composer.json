@@ -194,7 +194,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/remote-manage.git",
                     "type": "git",
-                    "reference": "3.0.1"
+                    "reference": "3.0.2"
                 }
             }
         },
