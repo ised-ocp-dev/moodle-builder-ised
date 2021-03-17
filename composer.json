@@ -37,7 +37,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-availability_language.git",
                     "type": "git",
-                    "reference": "v39.2020112700"
+                    "reference": "v39.2021030700"
                 }
             }
         },
@@ -73,7 +73,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-filter_filtercodes.git",
                     "type": "git",
-                    "reference": "v39.2020112301"
+                    "reference": "v39.2020112302"
                 }
             }
         },
@@ -169,7 +169,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-mod_subcourse.git",
                     "type": "git",
-                    "reference": "v39.2020090602"
+                    "reference": "v39.2021021400"
                 }
             }
         },
@@ -181,7 +181,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb.git",
                     "type": "git",
-                    "reference": "v39.2021022800"
+                    "reference": "v39.2021031700"
                 }
             }
         },
