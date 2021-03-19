@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script is run when the pod is starting up.
 
 source ${PHP_CONTAINER_SCRIPTS_PATH}/common.sh
 
@@ -21,6 +22,7 @@ export SESSION_COOKIE_DOMAIN=${SESSION_COOKIE_DOMAIN:-}
 export SESSION_COOKIE_HTTPONLY=${SESSION_COOKIE_HTTPONLY:-}
 export SESSION_COOKIE_SECURE=${SESSION_COOKIE_SECURE:-0}
 export SHORT_OPEN_TAG=${SHORT_OPEN_TAG:-OFF}
+export UPLOAD_MAX_FILESIZE=${UPLOAD_MAX_FILESIZE:-500M}
 
 # TODO should be dynamically calculated based on container memory limit/16
 export OPCACHE_MEMORY_CONSUMPTION=${OPCACHE_MEMORY_CONSUMPTION:-128}
@@ -28,6 +30,10 @@ export OPCACHE_REVALIDATE_FREQ=${OPCACHE_REVALIDATE_FREQ:-60}
 
 export PHPRC=${PHPRC:-${PHP_SYSCONF_PATH}/php.ini}
 export PHP_INI_SCAN_DIR=${PHP_INI_SCAN_DIR:-${PHP_SYSCONF_PATH}/php.d}
+
+# Update php.ini with configurable post_max_size and upload_max_filesize.
+sed -i "s,^post_max_size =.*$,post_max_size = $UPLOAD_MAX_FILESIZE," /opt/app-root/etc/php.ini.template
+sed -i "s,^upload_max_filesize =.*$,upload_max_filesize = $UPLOAD_MAX_FILESIZE," /opt/app-root/etc/php.ini.template
 
 envsubst < /opt/app-root/etc/php.ini.template > ${PHP_SYSCONF_PATH}/php.ini
 envsubst < /opt/app-root/etc/php.d/10-opcache.ini.template > ${PHP_SYSCONF_PATH}/php.d/10-opcache.ini
