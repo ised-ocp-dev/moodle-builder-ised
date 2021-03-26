@@ -17,6 +17,9 @@ RUN yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x
 # Ghostscript - Required in order to annotate PDFs from within Moodle.
 RUN yum install -y ghostscript
 
+# TODO: Install php extension: sodium
+# RUN yum --enablerepo=remi-php73 install-y php-sodium
+
 # Disable directory listings.
 RUN sed -i 's/Options Indexes FollowSymLinks/Options FollowSymLinks/' /etc/httpd/conf/httpd.conf
 
