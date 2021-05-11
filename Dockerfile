@@ -1,4 +1,4 @@
-FROM registry.apps.dev.ocp-dev.ised-isde.canada.ca/ised-ci/sclorg-s2i-php:7.3
+FROM ised-ci/sclorg-s2i-php:7.3
 
 # The following commands need to be executed as root.
 
