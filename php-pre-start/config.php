@@ -715,7 +715,7 @@ $CFG->preventexecpath = true;
 
 // Configure outgoing email using environment variables.
 $CFG->smtphosts = trim(!empty($_ENV['AWS_SMTP_HOST']) ? $_ENV['AWS_SMTP_HOST'] : $_ENV['SMTP_HOST']); // SMTP hosts.
-$CFG->smtpsecure = trim(strtolower(!empty($_ENV['AWS_SMTP_SECURE']) ? $_ENV['AWS_SMTP_SECURE'] : $_ENV['SMTP_SECURE'])); // SMTP security.
+$CFG->smtpsecure = trim(strtolower(!empty($_ENV['AWS_SMTP_SECURITY']) ? $_ENV['AWS_SMTP_SECURITY'] : $_ENV['SMTP_SECURITY'])); // SMTP security.
 $CFG->smtpuser = trim(!empty($_ENV['AWS_SMTP_USERNAME']) ? $_ENV['AWS_SMTP_USERNAME'] : $_ENV['SMTP_USERNAME']); // SMTP username.
 $CFG->smtppass = trim(!empty($_ENV['AWS_SMTP_PASSWORD']) ? $_ENV['AWS_SMTP_PASSWORD'] : $_ENV['SMTP_PASSWORD']); // SMTP password.
 $CFG->noreplyaddress = trim(!empty($_ENV['AWS_SMTP_NOREPLY']) ? $_ENV['AWS_SMTP_NOREPLY'] : $_ENV['SMTP_NOREPLY']); // No-reply address.
