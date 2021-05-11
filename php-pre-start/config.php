@@ -718,13 +718,13 @@ $CFG->smtphosts = trim(!empty($_ENV['AWS_SMTP_HOST']) ? $_ENV['AWS_SMTP_HOST'] :
 $CFG->smtpsecure = trim(strtolower(!empty($_ENV['AWS_SMTP_SECURE']) ? $_ENV['AWS_SMTP_SECURE'] : $_ENV['SMTP_SECURE'])); // SMTP security.
 $CFG->smtpuser = trim(!empty($_ENV['AWS_SMTP_USERNAME']) ? $_ENV['AWS_SMTP_USERNAME'] : $_ENV['SMTP_USERNAME']); // SMTP username.
 $CFG->smtppass = trim(!empty($_ENV['AWS_SMTP_PASSWORD']) ? $_ENV['AWS_SMTP_PASSWORD'] : $_ENV['SMTP_PASSWORD']); // SMTP password.
-$CFG->noreplyaddress = trim(!empty($ENV['AWS_SMTP_NOREPLY']) ? $ENV['AWS_SMTP_NOREPLY'] : $ENV['SMTP_NOREPLY']); // No-reply address.
+$CFG->noreplyaddress = trim(!empty($_ENV['AWS_SMTP_NOREPLY']) ? $_ENV['AWS_SMTP_NOREPLY'] : $_ENV['SMTP_NOREPLY']); // No-reply address.
 $CFG->smtpauthtype = 'LOGIN'; // SMTP Auth Type.
 $CFG->smtpmaxbulk = '2'; // SMTP session limit.
 
 // Configure cron password using environment variable. Note: Must also match password programmed into cronjob's command line.
-if (!empty(trim($ENV['CRON_PASSWORD']))) {
-    $CFG->cronremotepassword = trim($ENV['CRON_PASSWORD']);
+if (!empty(trim($_ENV['CRON_PASSWORD']))) {
+    $CFG->cronremotepassword = trim($_ENV['CRON_PASSWORD']);
 }
 
 // Server > Support Contact
