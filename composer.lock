@@ -422,6 +422,16 @@
             "type": "library"
         },
         {
+            "name": "ised-isde/MoodleSystemMonitor",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ised-ocp-dev/MoodleSystemMonitor.git",
+                "reference": "v39.20210929"
+            },
+            "type": "library"
+        },
+        {
             "name": "ised-isde/remote-manage",
             "version": "3.0",
             "source": {
