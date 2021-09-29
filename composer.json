@@ -198,6 +198,19 @@
                 }
             }
         },
+         {
+            "type": "package",
+            "package": {
+                "name": "ised-isde/MoodleSystemMonitor",
+                "version": "1.0.0",
+                "type": "library",
+                "source": {
+                    "url": "https://github.com/ised-ocp-dev/MoodleSystemMonitor.git",
+                    "type": "git",
+                    "reference": "1.0.0"
+                }
+            }
+        },  
         {
             "type": "vcs",
             "url": "https://github.com/moodlehq/php-webdriver.git"
