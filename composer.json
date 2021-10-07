@@ -202,12 +202,12 @@
             "type": "package",
             "package": {
                 "name": "ised-isde/MoodleSystemMonitor",
-                "version": "v39.20211006",
+                "version": "v39.20211007",
                 "type": "library",
                 "source": {
                     "url": "https://github.com/ised-ocp-dev/MoodleSystemMonitor.git",
                     "type": "git",
-                    "reference": "v39.20211006"
+                    "reference": "v39.20211007"
                 }
             }
         },  
@@ -229,6 +229,7 @@
             "./dist/local/isedisde": ["ised-isde/moodle-local_isedisde"],
             "./dist/local/login": ["ised-isde/moodle-local_login"],
             "./dist/local/mailtest": ["ised-isde/moodle-local_mailtest"],
+			"./dist/local/msm": ["ised-isde/MoodleSystemMonitor"],
             "./dist/mod/customcert": ["ised-isde/moodle-mod_customcert"],
             "./dist/mod/subcourse": ["ised-isde/moodle-mod_subcourse"],
             "./dist/theme/gcweb": ["ised-isde/moodle-theme_gcweb"]
@@ -250,6 +251,7 @@
         "ised-isde/moodle-local_isedisde": "1.0",
         "ised-isde/moodle-local_login": "1.0",
         "ised-isde/moodle-local_mailtest": "1.0",
+		"ised-isde/MoodleSystemMonitor": "1.0",
         "ised-isde/moodle-mod_customcert": "1.0",
         "ised-isde/moodle-mod_subcourse": "1.0",
         "ised-isde/moodle-theme_gcweb": "4.0.30"
