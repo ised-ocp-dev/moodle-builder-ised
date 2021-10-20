@@ -423,11 +423,11 @@
         },
         {
             "name": "ised-isde/MoodleSystemMonitor",
-            "version": "v39.20211020",
+            "version": "v39.20211021",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-ocp-dev/MoodleSystemMonitor.git",
-                "reference": "v39.20211020"
+                "reference": "v39.20211021"
             },
             "type": "library"
         },
