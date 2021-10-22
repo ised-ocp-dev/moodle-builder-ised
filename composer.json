@@ -240,8 +240,8 @@
             "./dist/local/isedisde": ["ised-isde/moodle-local_isedisde"],
             "./dist/local/login": ["ised-isde/moodle-local_login"],
             "./dist/local/mailtest": ["ised-isde/moodle-local_mailtest"],
-	    "./dist/admin/tool/mergeusers": ["ised-isde/MoodleSystemMonitor"],
-	    "./dist/local/msm": ["ised-isde/moodle-tool_mergeusers"],
+	    "./dist/local/msm": ["ised-isde/MoodleSystemMonitor"],
+	    "./dist/admin/tool/mergeusers": ["ised-isde/moodle-tool_mergeusers"],
             "./dist/mod/customcert": ["ised-isde/moodle-mod_customcert"],
             "./dist/mod/subcourse": ["ised-isde/moodle-mod_subcourse"],
             "./dist/theme/gcweb": ["ised-isde/moodle-theme_gcweb"]
