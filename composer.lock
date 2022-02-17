@@ -416,8 +416,8 @@
             "version": "4.0.30",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb.git",
-                "reference": "v39.20210831"
+                "url": "https://github.com/normorea/ISED-GCWeb-Theme",
+                "reference": "v39.20220217"
             },
             "type": "library"
         },
