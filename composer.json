@@ -179,9 +179,9 @@
                 "name": "ised-isde/moodle-theme_gcweb",
                 "version": "4.0.30",
                 "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb.git",
+                    "url": "https://github.com/normorea/ISED-GCWeb-Theme",
                     "type": "git",
-                    "reference": "v39.20210831"
+                    "reference": "v39.20220217"
                 }
             }
         },
