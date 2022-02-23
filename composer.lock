@@ -418,7 +418,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/normorea/ISED-GCWeb-Theme",
-                "reference": "v39.20220202"
+                "reference": "v39.20220223"
             },
             "type": "library"
         },
