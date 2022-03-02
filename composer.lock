@@ -288,7 +288,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle.git",
-                "reference": "v39.20220301"
+                "reference": "v39.20220302"
             },
             "type": "library"
         },
