@@ -418,7 +418,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb",
-                "reference": "v39.202202231"
+                "reference": "v39.202202329"
             },
             "type": "library"
         },
