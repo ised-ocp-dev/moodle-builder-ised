@@ -323,7 +323,7 @@
             "type": "library"
         },
 	{
-            "name": "/ised-ocp-dev/Moodle-Global-Widgets-Local",
+            "name": "ised-ocp-dev/Moodle-Global-Widgets-Local",
             "version": "1.0",
             "source": {
                 "type": "git",
@@ -333,7 +333,7 @@
             "type": "library"
         },
 	 {
-            "name": "/ised-ocp-dev/Moodle-Global-Widgets-Block",
+            "name": "ised-ocp-dev/Moodle-Global-Widgets-Block",
             "version": "1.0",
             "source": {
                 "type": "git",
