@@ -65,6 +65,30 @@
                 }
             }
         },
+	{
+            "type": "package",
+            "package": {
+                "name": "ised-ocp-dev/Moodle-Global-Widgets-Local",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Local",
+                    "type": "git",
+                    "reference": "v39.20220502"
+                }
+            }
+        },
+	{
+            "type": "package",
+            "package": {
+                "name": "ised-ocp-dev/Moodle-Global-Widgets-Local",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Local.git",
+                    "type": "git",
+                    "reference": "v39.20220502"
+                }
+            }
+        },
         {
             "type": "package",
             "package": {
@@ -233,6 +257,8 @@
             "./dist/availability/condition/language": ["ised-isde/moodle-availability_language"],
             "./dist/blocks/admin_presets": ["ised-isde/moodle-block_admin_presets"],
             "./dist/blocks/configurable_reports": ["ised-isde/moodle-block_configurablereports"],
+	    "./dist/local/globalwidgets": ["ised-ocp-dev/Moodle-Global-Widgets-Local"],
+            "./dist/block/globalwidgets": ["ised-ocp-dev/Moodle-Global-Widgets-Block"],
             "./dist/filter/filtercodes": ["ised-isde/moodle-filter_filtercodes"],
             "./dist/filter/multilang2": ["ised-isde/moodle-filter_multilang2"],
             "./dist/local/adminer": ["ised-isde/moodle-local_adminer"],
@@ -256,6 +282,8 @@
         "ised-isde/moodle-availability_language": "1.0",
         "ised-isde/moodle-block_admin_presets": "1.0",
         "ised-isde/moodle-block_configurablereports": "1.0",
+	"ised-ocp-dev/Moodle-Global-Widgets-Local": "1.0",
+	"ised-ocp-dev/Moodle-Global-Widgets-Block": "1.0",
         "ised-isde/moodle-filter_filtercodes": "1.0",
         "ised-isde/moodle-filter_multilang2": "1.0",
         "ised-isde/moodle-local_adminer": "1.0",
