@@ -80,10 +80,10 @@
 	{
             "type": "package",
             "package": {
-                "name": "ised-ocp-dev/Moodle-Global-Widgets-Local",
+                "name": "ised-ocp-dev/Moodle-Global-Widgets-Block",
                 "version": "1.0",
                 "source": {
-                    "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Local.git",
+                    "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Block.git",
                     "type": "git",
                     "reference": "v39.20220502"
                 }
