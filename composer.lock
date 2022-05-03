@@ -340,7 +340,7 @@
                 "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Block.git",
                 "reference": "v39.20220502"
             },
-            "type": "block"
+            "type": "library"
         },
         {
             "name": "ised-isde/moodle-filter_filtercodes",
