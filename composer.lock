@@ -322,6 +322,26 @@
             },
             "type": "library"
         },
+	{
+            "name": "/ised-ocp-dev/Moodle-Global-Widgets-Local",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com//ised-ocp-dev/Moodle-Global-Widgets-Local.git",
+                "reference": "v39.20220502"
+            },
+            "type": "library"
+        },
+	 {
+            "name": "/ised-ocp-dev/Moodle-Global-Widgets-Block",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com//ised-ocp-dev/Moodle-Global-Widgets-Block.git",
+                "reference": "v39.20220502"
+            },
+            "type": "block"
+        },
         {
             "name": "ised-isde/moodle-filter_filtercodes",
             "version": "1.0",
