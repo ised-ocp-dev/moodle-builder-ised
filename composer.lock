@@ -327,7 +327,7 @@
             "version": "1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com//ised-ocp-dev/Moodle-Global-Widgets-Local.git",
+                "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Local.git",
                 "reference": "v39.20220502"
             },
             "type": "library"
@@ -337,7 +337,7 @@
             "version": "1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com//ised-ocp-dev/Moodle-Global-Widgets-Block.git",
+                "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Block.git",
                 "reference": "v39.20220502"
             },
             "type": "block"
