@@ -6,7 +6,7 @@
     "homepage": "http://www.ic.gc.ca/",
     "repositories": [
         {
-            "type": Fpackage",
+            "type": "package",
             "package": {
                 "name": "ised-isde/moodle",
                 "version": "3.9",
