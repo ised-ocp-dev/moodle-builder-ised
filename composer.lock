@@ -338,7 +338,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Block.git",
-                "reference": "v39.20220504"
+                "reference": "v39.20220509"
             },
             "type": "library"
         },
