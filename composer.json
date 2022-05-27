@@ -73,7 +73,7 @@
                 "source": {
                     "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Local",
                     "type": "git",
-                    "reference": "v39.20220527"
+                    "reference": "v39.20220528"
                 }
             }
         },
@@ -85,7 +85,7 @@
                 "source": {
                     "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Block.git",
                     "type": "git",
-                    "reference": "v39.20220527"
+                    "reference": "v39.20220528"
                 }
             }
         },
