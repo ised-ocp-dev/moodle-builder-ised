@@ -89,6 +89,18 @@
                 }
             }
         },
+		{
+            "type": "package",
+            "package": {
+                "name": "ised-ocp-dev/Moodle-Custom-Reports",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-ocp-dev/Moodle-Custom-Reports.git",
+                    "type": "git",
+                    "reference": "v39.20220609"
+                }
+            }
+        },
         {
             "type": "package",
             "package": {
@@ -258,6 +270,7 @@
             "./dist/blocks/admin_presets": ["ised-isde/moodle-block_admin_presets"],
             "./dist/blocks/configurable_reports": ["ised-isde/moodle-block_configurablereports"],
 	    "./dist/local/globalwidgets": ["ised-ocp-dev/Moodle-Global-Widgets-Local"],
+		"./dist/local/customreports": ["ised-ocp-dev/Moodle-Custom-Reports"],
             "./dist/blocks/globalwidgets": ["ised-ocp-dev/Moodle-Global-Widgets-Block"],
             "./dist/filter/filtercodes": ["ised-isde/moodle-filter_filtercodes"],
             "./dist/filter/multilang2": ["ised-isde/moodle-filter_multilang2"],
