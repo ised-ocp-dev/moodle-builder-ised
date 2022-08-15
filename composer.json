@@ -217,7 +217,7 @@
                 "source": {
                     "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb",
                     "type": "git",
-                    "reference": "v39.20220621"
+                    "reference": "v39.20220815"
                 }
             }
         },
