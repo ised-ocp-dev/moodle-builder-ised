@@ -65,6 +65,18 @@
                 }
             }
         },
+		{
+            "type": "package",
+            "package": {
+                "name": "ised-ocp-dev/moodle-accessibility-block",
+                "version": "1.0",
+                "source": {
+                    "url": "https://github.com/ised-ocp-dev/moodle-accessibility-block.git",
+                    "type": "git",
+                    "reference": "v20220913"
+                }
+            }
+        },
 	{
             "type": "package",
             "package": {
@@ -265,25 +277,26 @@
     ],
     "extra": {
         "installer-paths": {
-            "./dist": ["ised-isde/moodle"],
-            "./dist/availability/condition/language": ["ised-isde/moodle-availability_language"],
-            "./dist/blocks/admin_presets": ["ised-isde/moodle-block_admin_presets"],
-            "./dist/blocks/configurable_reports": ["ised-isde/moodle-block_configurablereports"],
-	    "./dist/local/globalwidgets": ["ised-ocp-dev/Moodle-Global-Widgets-Local"],
-		"./dist/local/customreports": ["ised-ocp-dev/Moodle-Custom-Reports"],
-            "./dist/blocks/globalwidgets": ["ised-ocp-dev/Moodle-Global-Widgets-Block"],
-            "./dist/filter/filtercodes": ["ised-isde/moodle-filter_filtercodes"],
-            "./dist/filter/multilang2": ["ised-isde/moodle-filter_multilang2"],
-            "./dist/local/adminer": ["ised-isde/moodle-local_adminer"],
-            "./dist/local/contact": ["ised-isde/moodle-local_contact"],
-            "./dist/local/isedisde": ["ised-isde/moodle-local_isedisde"],
-            "./dist/local/login": ["ised-isde/moodle-local_login"],
-            "./dist/local/mailtest": ["ised-isde/moodle-local_mailtest"],
-	    "./dist/local/msm": ["ised-isde/MoodleSystemMonitor"],
-	    "./dist/admin/tool/mergeusers": ["ised-isde/moodle-tool_mergeusers"],
-            "./dist/mod/customcert": ["ised-isde/moodle-mod_customcert"],
-            "./dist/mod/subcourse": ["ised-isde/moodle-mod_subcourse"],
-            "./dist/theme/gcweb": ["ised-isde/moodle-theme_gcweb"]
+			"./dist": ["ised-isde/moodle"],
+			"./dist/availability/condition/language": ["ised-isde/moodle-availability_language"],
+			"./dist/blocks/admin_presets": ["ised-isde/moodle-block_admin_presets"],
+			"./dist/blocks/configurable_reports": ["ised-isde/moodle-block_configurablereports"],
+			"./dist/local/globalwidgets": ["ised-ocp-dev/Moodle-Global-Widgets-Local"],
+			"./dist/local/customreports": ["ised-ocp-dev/Moodle-Custom-Reports"],
+			"./dist/blocks/globalwidgets": ["ised-ocp-dev/Moodle-Global-Widgets-Block"],
+			"./dist/blocks/accessibility": ["ised-ocp-dev/moodle-accessibility-block"],
+			"./dist/filter/filtercodes": ["ised-isde/moodle-filter_filtercodes"],
+			"./dist/filter/multilang2": ["ised-isde/moodle-filter_multilang2"],
+			"./dist/local/adminer": ["ised-isde/moodle-local_adminer"],
+			"./dist/local/contact": ["ised-isde/moodle-local_contact"],
+			"./dist/local/isedisde": ["ised-isde/moodle-local_isedisde"],
+			"./dist/local/login": ["ised-isde/moodle-local_login"],
+			"./dist/local/mailtest": ["ised-isde/moodle-local_mailtest"],
+			"./dist/local/msm": ["ised-isde/MoodleSystemMonitor"],
+			"./dist/admin/tool/mergeusers": ["ised-isde/moodle-tool_mergeusers"],
+			"./dist/mod/customcert": ["ised-isde/moodle-mod_customcert"],
+			"./dist/mod/subcourse": ["ised-isde/moodle-mod_subcourse"],
+			"./dist/theme/gcweb": ["ised-isde/moodle-theme_gcweb"]
         }
     },
     "require": {
