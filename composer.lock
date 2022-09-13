@@ -331,8 +331,8 @@
                 "reference": "v20220913"
             },
             "type": "library"
-        }
-	{
+        },
+		{
             "name": "ised-ocp-dev/Moodle-Global-Widgets-Local",
             "version": "1.0",
             "source": {
@@ -342,7 +342,7 @@
             },
             "type": "library"
         },
-	 {
+		{
             "name": "ised-ocp-dev/Moodle-Global-Widgets-Block",
             "version": "1.0",
             "source": {
