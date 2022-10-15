@@ -109,7 +109,7 @@
                 "source": {
                     "url": "https://github.com/ised-ocp-dev/Moodle-Custom-Reports.git",
                     "type": "git",
-                    "reference": "v39.20221014"
+                    "reference": "v39.20221015"
                 }
             }
         },
