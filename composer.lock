@@ -482,6 +482,16 @@
             },
             "type": "library"
         },
+		{
+            "name": "ised-ocp-dev/Moodle-Block-Accessibility-Self-Hosted",
+            "version": "v39.20221116",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ised-ocp-dev/Moodle-Block-Accessibility-Self-Hosted.git",
+                "reference": "v39.20221116"
+            },
+            "type": "library"
+        },
         {
             "name": "ised-isde/remote-manage",
             "version": "3.0",
