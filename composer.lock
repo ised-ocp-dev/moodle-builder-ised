@@ -323,16 +323,6 @@
             "type": "library"
         },
 		{
-            "name": "ised-ocp-dev/moodle-accessibility-block",
-            "version": "1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ised-ocp-dev/moodle-accessibility-block.git",
-                "reference": "v20220913"
-            },
-            "type": "library"
-        },
-		{
             "name": "ised-ocp-dev/Moodle-Global-Widgets-Local",
             "version": "1.0",
             "source": {
