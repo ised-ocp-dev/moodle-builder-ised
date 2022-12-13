@@ -464,11 +464,11 @@
         },
 		{
             "name": "ised-ocp-dev/Moodle-Block-Accessibility-Self-Hosted",
-            "version": "v39.20221213",
+            "version": "v39.20221214",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-ocp-dev/Moodle-Block-Accessibility-Self-Hosted.git",
-                "reference": "v39.20221213"
+                "reference": "v39.20221214"
             },
             "type": "library"
         },
