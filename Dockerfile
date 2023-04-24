@@ -11,7 +11,7 @@ RUN curl -s -o $COMPOSER_FILE https://getcomposer.org/installer && \
 
 # Postgres Client - Required for the backup system.
 RUN yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
-    yum --disablerepo=rhel-8-for-x86_64-appstream-rpms install -y postgresql14 && \
+    yum --disablerepo=rhel-8-for-x86_64-appstream-rpms install -y postgresql12 && \
     yum clean all
 
 # Ghostscript - Required in order to annotate PDFs from within Moodle.
