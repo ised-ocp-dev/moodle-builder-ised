@@ -1,359 +1,402 @@
 {
-    "name": "ised-isde/moodle-builder",
-    "license": "GPL-3.0-or-later",
-    "description": "ISED Builder for Moodle 3.9",
-    "type": "project",
-    "homepage": "http://www.ic.gc.ca/",
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle",
-                "version": "3.9",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle.git",
-                    "type": "git",
-                    "reference": "v39.20230306"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-builder-ised",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-builder-ised.git",
-                    "type": "git",
-                    "reference": "MOODLE_39_STABLE"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-availability_language",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-availability_language.git",
-                    "type": "git",
-                    "reference": "v39.2021030700"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-block_admin_presets",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-block_admin_presets.git",
-                    "type": "git",
-                    "reference": "v39.2020062417"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-block_configurablereports",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-block_configurablereports.git",
-                    "type": "git",
-                    "reference": "v39.2020110300"
-                }
-            }
-        },
-	{
-            "type": "package",
-            "package": {
-                "name": "ised-ocp-dev/Moodle-Global-Widgets-Local",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Local",
-                    "type": "git",
-                    "reference": "v39.20221206"
-                }
-            }
-        },
-	{
-            "type": "package",
-            "package": {
-                "name": "ised-ocp-dev/Moodle-Global-Widgets-Block",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Block.git",
-                    "type": "git",
-                    "reference": "v39.20220530"
-                }
-            }
-        },
-		{
-            "type": "package",
-            "package": {
-                "name": "ised-ocp-dev/Moodle-Custom-Reports",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-ocp-dev/Moodle-Custom-Reports.git",
-                    "type": "git",
-                    "reference": "v39.20230126.2"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-filter_filtercodes",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-filter_filtercodes.git",
-                    "type": "git",
-                    "reference": "v39.2020112302"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-filter_multilang2",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-filter_multilang2.git",
-                    "type": "git",
-                    "reference": "v39.2020101300"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-local_adminer",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-local_adminer.git",
-                    "type": "git",
-                    "reference": "v39.2021030801"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-local_contact",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-local_contact.git",
-                    "type": "git",
-                    "reference": "v39.2020112300"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-local_isedisde",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-local_isedisde.git",
-                    "type": "git",
-                    "reference": "v39.2020012900"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-local_login",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-local_login.git",
-                    "type": "git",
-                    "reference": "v39.2020011900"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-local_mailtest",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-local_mailtest.git",
-                    "type": "git",
-                    "reference": "v39.2020092000"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-mod_customcert",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-mod_customcert.git",
-                    "type": "git",
-                    "reference": "v39.2020061500"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-mod_subcourse",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-mod_subcourse.git",
-                    "type": "git",
-                    "reference": "v39.2021021400"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-theme_gcweb",
-                "version": "4.0.30",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb",
-                    "type": "git",
-                    "reference": "v39.20220815"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "ised-isde/remote-manage",
-                "version": "3.0",
-                "type": "library",
-                "source": {
-                    "url": "https://github.com/ised-isde-canada/remote-manage.git",
-                    "type": "git",
-                    "reference": "3.0.2"
-                }
-            }
-        },
-    	{
-            "type": "package",
-            "package": {
-                "name": "ised-isde/moodle-tool_mergeusers",
-                "version": "v39.20211021",
-                "type": "library",
-                "source": {
-                    "url": "https://github.com/ised-ocp-dev/moodle-tool_mergeusers.git",
-                    "type": "git",
-                    "reference": "v39.20211021"
-                }
-            }
-        },
-    	{
-            "type": "package",
-            "package": {
-                "name": "ised-ocp-dev/Moodle-Block-Accessibility-Self-Hosted",
-                "version": "v39.20221214",
-                "type": "library",
-                "source": {
-                    "url": "https://github.com/ised-ocp-dev/Moodle-Block-Accessibility-Self-Hosted.git",
-                    "type": "git",
-                    "reference": "v39.20221214"
-                }
-            }
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/moodlehq/php-webdriver.git"
-        },
-	{
-            "type": "package",
-            "package": 	{
-            	"name": "ised-ocp-dev/Moodle-Course-Completed-Enrolment",
-            	"version": "1.0",
-            	"source": {
-			"type": "git",
-			"url": "https://github.com/ised-ocp-dev/Moodle-Course-Completed-Enrolment.git",
-			"reference": "v39.20221214"
-            	}
-	    }
+  "name": "ised-isde/moodle-builder",
+  "license": "GPL-3.0-or-later",
+  "description": "ISED Builder for Moodle 3.9",
+  "type": "project",
+  "homepage": "http://www.ic.gc.ca/",
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle",
+        "version": "3.9",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle.git",
+          "type": "git",
+          "reference": "v39.20230306"
         }
-    ],
-    "extra": {
-        "installer-paths": {
-			"./dist": ["ised-isde/moodle"],
-			"./dist/availability/condition/language": ["ised-isde/moodle-availability_language"],
-			"./dist/blocks/admin_presets": ["ised-isde/moodle-block_admin_presets"],
-			"./dist/blocks/configurable_reports": ["ised-isde/moodle-block_configurablereports"],
-			"./dist/local/globalwidgets": ["ised-ocp-dev/Moodle-Global-Widgets-Local"],
-			"./dist/local/customreports": ["ised-ocp-dev/Moodle-Custom-Reports"],
-			"./dist/blocks/globalwidgets": ["ised-ocp-dev/Moodle-Global-Widgets-Block"],
-			"./dist/blocks/accessibility": ["ised-ocp-dev/Moodle-Block-Accessibility-Self-Hosted"],
-			"./dist/filter/filtercodes": ["ised-isde/moodle-filter_filtercodes"],
-			"./dist/filter/multilang2": ["ised-isde/moodle-filter_multilang2"],
-			"./dist/local/adminer": ["ised-isde/moodle-local_adminer"],
-			"./dist/local/contact": ["ised-isde/moodle-local_contact"],
-			"./dist/local/isedisde": ["ised-isde/moodle-local_isedisde"],
-			"./dist/local/login": ["ised-isde/moodle-local_login"],
-			"./dist/local/mailtest": ["ised-isde/moodle-local_mailtest"],
-			"./dist/local/msm": ["ised-isde/MoodleSystemMonitor"],
-			"./dist/admin/tool/mergeusers": ["ised-isde/moodle-tool_mergeusers"],
-			"./dist/mod/customcert": ["ised-isde/moodle-mod_customcert"],
-			"./dist/mod/subcourse": ["ised-isde/moodle-mod_subcourse"],
-			"./dist/theme/gcweb": ["ised-isde/moodle-theme_gcweb"],
-			"./dist/enrol/coursecompleted": ["ised-ocp-dev/Moodle-Course-Completed-Enrolment"]
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-builder-ised",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-builder-ised.git",
+          "type": "git",
+          "reference": "MOODLE_39_STABLE"
         }
+      }
     },
-    "require": {
-        "php": ">=7.3",
-        "mnsami/composer-custom-directory-installer": "1.1.*",
-        "aws/aws-sdk-php": "^3.145",
-        "ised-isde/remote-manage": "3.0",
-        "ised-isde/moodle": "3.9",
-        "ised-isde/moodle-availability_language": "1.0",
-        "ised-isde/moodle-block_admin_presets": "1.0",
-        "ised-isde/moodle-block_configurablereports": "1.0",
-	"ised-ocp-dev/Moodle-Global-Widgets-Local": "1.0",
-	"ised-ocp-dev/Moodle-Global-Widgets-Block": "1.0",
-        "ised-isde/moodle-filter_filtercodes": "1.0",
-        "ised-isde/moodle-filter_multilang2": "1.0",
-        "ised-isde/moodle-local_adminer": "1.0",
-        "ised-isde/moodle-local_contact": "1.0",
-        "ised-isde/moodle-local_isedisde": "1.0",
-        "ised-isde/moodle-local_login": "1.0",
-        "ised-isde/moodle-local_mailtest": "1.0",
-	"ised-isde/MoodleSystemMonitor": "1.0",
-	"ised-isde/moodle-tool_mergeusers": "1.0",
-        "ised-isde/moodle-mod_customcert": "1.0",
-        "ised-isde/moodle-mod_subcourse": "1.0",
-        "ised-isde/moodle-theme_gcweb": "4.0.30",
-    	"ised-ocp-dev/Moodle-Course-Completed-Enrolment": "1.0"
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-availability_language",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-availability_language.git",
+          "type": "git",
+          "reference": "v39.2021030700"
+        }
+      }
     },
-    "require-dev": {
-        "phpunit/phpunit": "7.5.*",
-        "phpunit/dbunit": "4.0.*",
-        "moodlehq/behat-extension": "3.39.3",
-        "mikey179/vfsstream": "^1.6",
-        "instaclick/php-webdriver": "dev-local as 1.x-dev"
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-block_admin_presets",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-block_admin_presets.git",
+          "type": "git",
+          "reference": "v39.2020062417"
+        }
+      }
     },
-    "scripts": {
-        "post-install-cmd": [
-            "mv .s2i dist/",
-            "mv httpd-cfg dist/",
-            "mv php-pre-start dist/",
-            "mv dist/php-pre-start/config.php dist/",
-            "mv dist/php-pre-start/defaults.php dist/local/",
-            "mv dist/composer.* dist/php-pre-start/",
-            "shopt -s dotglob && cp -r dist/* .",
-            "rm -rf dist",
-            "rm README.md",
-            "ln -s /opt/app-root/src/vendor/ised-isde/remote-manage/rmanage.php rmanage.php",
-            "git cherry-pick -n origin/MDL-63219-M39",
-            "git cherry-pick -n origin/MDL-66856-M39",
-            "git cherry-pick -n origin/MDL-67554-M39",
-            "git cherry-pick -n origin/MDL-67802-M39",
-            "git cherry-pick -n origin/MDL-52810-M39",
-            "git cherry-pick -n origin/MDL-61880-M39",
-            "git cherry-pick -n origin/MDL-64969-M39",
-            "git cherry-pick -n origin/MDL-68337-M39"
-        ]
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-block_configurablereports",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-block_configurablereports.git",
+          "type": "git",
+          "reference": "v39.2020110300"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-ocp-dev/moodle-global-widgets-local",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Local",
+          "type": "git",
+          "reference": "v39.20221206"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-ocp-dev/moodle-global-widgets-block",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Block.git",
+          "type": "git",
+          "reference": "v39.20220530"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-ocp-dev/moodle-custom-reports",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-ocp-dev/Moodle-Custom-Reports.git",
+          "type": "git",
+          "reference": "v39.20230126.2"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-filter_filtercodes",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-filter_filtercodes.git",
+          "type": "git",
+          "reference": "v39.2020112302"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-filter_multilang2",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-filter_multilang2.git",
+          "type": "git",
+          "reference": "v39.2020101300"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-local_adminer",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-local_adminer.git",
+          "type": "git",
+          "reference": "v39.2021030801"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-local_contact",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-local_contact.git",
+          "type": "git",
+          "reference": "v39.2020112300"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-local_isedisde",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-local_isedisde.git",
+          "type": "git",
+          "reference": "v39.2020012900"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-local_login",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-local_login.git",
+          "type": "git",
+          "reference": "v39.2020011900"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-local_mailtest",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-local_mailtest.git",
+          "type": "git",
+          "reference": "v39.2020092000"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-mod_customcert",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-mod_customcert.git",
+          "type": "git",
+          "reference": "v39.2020061500"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-mod_subcourse",
+        "version": "1.0",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-mod_subcourse.git",
+          "type": "git",
+          "reference": "v39.2021021400"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-theme_gcweb",
+        "version": "4.0.30",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb",
+          "type": "git",
+          "reference": "v39.20220815"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/remote-manage",
+        "version": "3.0",
+        "type": "library",
+        "source": {
+          "url": "https://github.com/ised-isde-canada/remote-manage.git",
+          "type": "git",
+          "reference": "3.0.2"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-isde/moodle-tool_mergeusers",
+        "version": "v39.20211021",
+        "type": "library",
+        "source": {
+          "url": "https://github.com/ised-ocp-dev/moodle-tool_mergeusers.git",
+          "type": "git",
+          "reference": "v39.20211021"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-ocp-dev/moodle-block-accessibility-self-hosted",
+        "version": "v39.20221214",
+        "type": "library",
+        "source": {
+          "url": "https://github.com/ised-ocp-dev/Moodle-Block-Accessibility-Self-Hosted.git",
+          "type": "git",
+          "reference": "v39.20221214"
+        }
+      }
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/moodlehq/php-webdriver.git"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-ocp-dev/moodle-course-completed-enrolment",
+        "version": "1.0",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/ised-ocp-dev/Moodle-Course-Completed-Enrolment.git",
+          "reference": "v39.20221214"
+        }
+      }
     }
+  ],
+  "extra": {
+    "installer-paths": {
+      "./dist": [
+        "ised-isde/moodle"
+      ],
+      "./dist/availability/condition/language": [
+        "ised-isde/moodle-availability_language"
+      ],
+      "./dist/blocks/admin_presets": [
+        "ised-isde/moodle-block_admin_presets"
+      ],
+      "./dist/blocks/configurable_reports": [
+        "ised-isde/moodle-block_configurablereports"
+      ],
+      "./dist/local/globalwidgets": [
+        "ised-ocp-dev/moodle-global-widgets-local"
+      ],
+      "./dist/local/customreports": [
+        "ised-ocp-dev/moodle-custom-reports"
+      ],
+      "./dist/blocks/globalwidgets": [
+        "ised-ocp-dev/moodle-global-widgets-block"
+      ],
+      "./dist/blocks/accessibility": [
+        "ised-ocp-dev/moodle-block-accessibility-self-hosted"
+      ],
+      "./dist/filter/filtercodes": [
+        "ised-isde/moodle-filter_filtercodes"
+      ],
+      "./dist/filter/multilang2": [
+        "ised-isde/moodle-filter_multilang2"
+      ],
+      "./dist/local/adminer": [
+        "ised-isde/moodle-local_adminer"
+      ],
+      "./dist/local/contact": [
+        "ised-isde/moodle-local_contact"
+      ],
+      "./dist/local/isedisde": [
+        "ised-isde/moodle-local_isedisde"
+      ],
+      "./dist/local/login": [
+        "ised-isde/moodle-local_login"
+      ],
+      "./dist/local/mailtest": [
+        "ised-isde/moodle-local_mailtest"
+      ],
+      "./dist/admin/tool/mergeusers": [
+        "ised-isde/moodle-tool_mergeusers"
+      ],
+      "./dist/mod/customcert": [
+        "ised-isde/moodle-mod_customcert"
+      ],
+      "./dist/mod/subcourse": [
+        "ised-isde/moodle-mod_subcourse"
+      ],
+      "./dist/theme/gcweb": [
+        "ised-isde/moodle-theme_gcweb"
+      ],
+      "./dist/enrol/coursecompleted": [
+        "ised-ocp-dev/moodle-course-completed-enrolment"
+      ]
+    }
+  },
+  "require": {
+    "php": ">=7.3",
+    "mnsami/composer-custom-directory-installer": "2.0.0",
+    "aws/aws-sdk-php": "^3.145",
+    "ised-isde/remote-manage": "3.0",
+    "ised-isde/moodle": "3.9",
+    "ised-isde/moodle-availability_language": "1.0",
+    "ised-isde/moodle-block_admin_presets": "1.0",
+    "ised-isde/moodle-block_configurablereports": "1.0",
+    "ised-ocp-dev/moodle-global-widgets-local": "1.0",
+    "ised-ocp-dev/moodle-global-widgets-block": "1.0",
+    "ised-isde/moodle-filter_filtercodes": "1.0",
+    "ised-isde/moodle-filter_multilang2": "1.0",
+    "ised-isde/moodle-local_adminer": "1.0",
+    "ised-isde/moodle-local_contact": "1.0",
+    "ised-isde/moodle-local_isedisde": "1.0",
+    "ised-isde/moodle-local_login": "1.0",
+    "ised-isde/moodle-local_mailtest": "1.0",
+    "ised-isde/moodle-tool_mergeusers": "v39.20211021",
+    "ised-isde/moodle-mod_customcert": "1.0",
+    "ised-isde/moodle-mod_subcourse": "1.0",
+    "ised-isde/moodle-theme_gcweb": "4.0.30",
+    "ised-ocp-dev/moodle-course-completed-enrolment": "1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "7.5.*",
+    "phpunit/dbunit": "4.0.*",
+    "moodlehq/behat-extension": "3.39.3",
+    "mikey179/vfsstream": "^1.6",
+    "instaclick/php-webdriver": "dev-local as 1.x-dev"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "mv .s2i dist/",
+      "mv httpd-cfg dist/",
+      "mv php-pre-start dist/",
+      "mv dist/php-pre-start/config.php dist/",
+      "mv dist/php-pre-start/defaults.php dist/local/",
+      "mv dist/composer.* dist/php-pre-start/",
+      "shopt -s dotglob && cp -r dist/* .",
+      "rm -rf dist",
+      "rm README.md",
+      "ln -s /opt/app-root/src/vendor/ised-isde/remote-manage/rmanage.php rmanage.php",
+      "git cherry-pick -n origin/MDL-63219-M39",
+      "git cherry-pick -n origin/MDL-66856-M39",
+      "git cherry-pick -n origin/MDL-67554-M39",
+      "git cherry-pick -n origin/MDL-67802-M39",
+      "git cherry-pick -n origin/MDL-52810-M39",
+      "git cherry-pick -n origin/MDL-61880-M39",
+      "git cherry-pick -n origin/MDL-64969-M39",
+      "git cherry-pick -n origin/MDL-68337-M39"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "mnsami/composer-custom-directory-installer": true
+    }
+  }
 }
