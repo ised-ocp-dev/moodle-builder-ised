@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47a3653c3233741a0f387c561a3beab6",
+    "content-hash": "aae2c92f67f55cc469d9070e44cf129f",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -604,16 +604,6 @@
                 "type": "git",
                 "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Local.git",
                 "reference": "v39.20221206"
-            },
-            "type": "library"
-        },
-        {
-            "name": "ised-ocp-dev/moodlesystemmonitor",
-            "version": "v39.20211021",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ised-ocp-dev/MoodleSystemMonitor.git",
-                "reference": "v39.20211021"
             },
             "type": "library"
         },

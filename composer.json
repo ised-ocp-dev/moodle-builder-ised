@@ -237,19 +237,6 @@
     {
       "type": "package",
       "package": {
-        "name": "ised-ocp-dev/moodlesystemmonitor",
-        "version": "v39.20211021",
-        "type": "library",
-        "source": {
-          "url": "https://github.com/ised-ocp-dev/MoodleSystemMonitor.git",
-          "type": "git",
-          "reference": "v39.20211021"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
         "name": "ised-isde/moodle-tool_mergeusers",
         "version": "v39.20211021",
         "type": "library",
@@ -337,9 +324,6 @@
       "./dist/local/mailtest": [
         "ised-isde/moodle-local_mailtest"
       ],
-      "./dist/local/msm": [
-        "ised-ocp-dev/moodlesystemmonitor"
-      ],
       "./dist/admin/tool/mergeusers": [
         "ised-isde/moodle-tool_mergeusers"
       ],
@@ -375,7 +359,6 @@
     "ised-isde/moodle-local_isedisde": "1.0",
     "ised-isde/moodle-local_login": "1.0",
     "ised-isde/moodle-local_mailtest": "1.0",
-    "ised-ocp-dev/moodlesystemmonitor": "^39.20211021",
     "ised-isde/moodle-tool_mergeusers": "v39.20211021",
     "ised-isde/moodle-mod_customcert": "1.0",
     "ised-isde/moodle-mod_subcourse": "1.0",
