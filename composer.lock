@@ -403,7 +403,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-isde-canada/moodle.git",
-                "reference": "v39.20230306"
+                "reference": "v39.20230530"
             },
             "type": "library"
         },
