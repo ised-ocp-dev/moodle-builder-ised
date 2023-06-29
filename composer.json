@@ -275,6 +275,18 @@
           "reference": "v39.20221214"
         }
       }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ised-ocp-dev/moodle-report-service-local",
+        "version": "1.0",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/ised-ocp-dev/Moodle-Report-Service-Local.git",
+          "reference": "v39.20230628"
+        }
+      }
     }
   ],
   "extra": {
@@ -338,6 +350,9 @@
       ],
       "./dist/enrol/coursecompleted": [
         "ised-ocp-dev/moodle-course-completed-enrolment"
+      ],
+      "./dist/local/reportservice": [
+        "ised-ocp-dev/moodle-report-service-local"
       ]
     }
   },
@@ -365,7 +380,8 @@
     "ised-isde/moodle-theme_gcweb": "4.0.30",
     "ised-ocp-dev/moodle-course-completed-enrolment": "1.0",
     "ised-ocp-dev/moodle-block-accessibility-self-hosted": "^39.20221214",
-    "ised-ocp-dev/moodle-custom-reports": "^1.0"
+    "ised-ocp-dev/moodle-custom-reports": "^1.0",
+    "ised-ocp-dev/moodle-report-service-local": "^1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "7.5.*",

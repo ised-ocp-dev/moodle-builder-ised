@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0843c9e7f3149f8945348754f5cef369",
+    "content-hash": "61b06df3eac257cb3f20788b41be8625",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.272.1",
+            "version": "3.274.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a0accaf4a16565c0b4438109c978602f27dff3a0"
+                "reference": "92907084c3b71859672ef6399194ef9c1f772b1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a0accaf4a16565c0b4438109c978602f27dff3a0",
-                "reference": "a0accaf4a16565c0b4438109c978602f27dff3a0",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/92907084c3b71859672ef6399194ef9c1f772b1a",
+                "reference": "92907084c3b71859672ef6399194ef9c1f772b1a",
                 "shasum": ""
             },
             "require": {
@@ -151,9 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.272.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.274.1"
             },
-            "time": "2023-06-09T18:21:02+00:00"
+            "time": "2023-06-28T18:21:54+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -661,6 +661,16 @@
                 "type": "git",
                 "url": "https://github.com/ised-ocp-dev/Moodle-Global-Widgets-Local",
                 "reference": "v39.20221206"
+            },
+            "type": "library"
+        },
+        {
+            "name": "ised-ocp-dev/moodle-report-service-local",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ised-ocp-dev/Moodle-Report-Service-Local.git",
+                "reference": "v39.20230628"
             },
             "type": "library"
         },
@@ -4459,16 +4469,16 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v5.4.23",
+            "version": "v5.4.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "b2f79d86cd9e7de0fff6d03baa80eaed7a5f38b5"
+                "reference": "0ce3a62c9579a53358d3a7eb6b3dfb79789a6364"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/b2f79d86cd9e7de0fff6d03baa80eaed7a5f38b5",
-                "reference": "b2f79d86cd9e7de0fff6d03baa80eaed7a5f38b5",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/0ce3a62c9579a53358d3a7eb6b3dfb79789a6364",
+                "reference": "0ce3a62c9579a53358d3a7eb6b3dfb79789a6364",
                 "shasum": ""
             },
             "require": {
@@ -4503,7 +4513,7 @@
             "description": "Provides basic utilities for the filesystem",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/filesystem/tree/v5.4.23"
+                "source": "https://github.com/symfony/filesystem/tree/v5.4.25"
             },
             "funding": [
                 {
@@ -4519,7 +4529,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-03-02T11:38:35+00:00"
+            "time": "2023-05-31T13:04:02+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
