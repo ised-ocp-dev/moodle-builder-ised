@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "61b06df3eac257cb3f20788b41be8625",
+    "content-hash": "7d4f9dece72b0aa320eec479eb095ff0",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.274.1",
+            "version": "3.275.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "92907084c3b71859672ef6399194ef9c1f772b1a"
+                "reference": "a0dfb094d3f94da2ebc86ed9583e14fdc9000f06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/92907084c3b71859672ef6399194ef9c1f772b1a",
-                "reference": "92907084c3b71859672ef6399194ef9c1f772b1a",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a0dfb094d3f94da2ebc86ed9583e14fdc9000f06",
+                "reference": "a0dfb094d3f94da2ebc86ed9583e14fdc9000f06",
                 "shasum": ""
             },
             "require": {
@@ -151,9 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.274.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.275.0"
             },
-            "time": "2023-06-28T18:21:54+00:00"
+            "time": "2023-06-29T19:21:55+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -670,7 +670,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-ocp-dev/Moodle-Report-Service-Local.git",
-                "reference": "v39.20230628"
+                "reference": "v39.20230629"
             },
             "type": "library"
         },
