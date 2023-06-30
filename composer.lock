@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d4f9dece72b0aa320eec479eb095ff0",
+    "content-hash": "78db09edda94583cf096f5622a8f131d",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -670,7 +670,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ised-ocp-dev/Moodle-Report-Service-Local.git",
-                "reference": "v39.20230629"
+                "reference": "v39.20230630"
             },
             "type": "library"
         },
