@@ -728,8 +728,8 @@ if (!empty(trim($_ENV['CRON_PASSWORD']))) {
 }
 
 // Server > Support Contact
-$CFG->supportname = 'ISED-ISDE';
-$CFG->supportemail = 'ic.cms-sgi.ic@canada.ca';
+$CFG->supportname = "ISED learning platform / La plateforme d'apprentissage d'ISDE";
+$CFG->supportemail = 'isedlearningplatform-laplateformedapprentissagedisde@ised-isde.gc.ca';
 
 //=========================================================================
 // 7. SETTINGS FOR DEVELOPMENT SERVERS - not intended for production use!!!
