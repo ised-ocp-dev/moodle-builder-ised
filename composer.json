@@ -284,7 +284,7 @@
         "source": {
           "type": "git",
           "url": "https://github.com/ised-ocp-dev/Moodle-Report-Service-Local.git",
-          "reference": "v39.20230630"
+          "reference": "v39.20230802"
         }
       }
     }
