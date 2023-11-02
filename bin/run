@@ -45,7 +45,7 @@ export HTTPD_START_SERVERS=${MOODLE_START_SERVERS:-8}
 export HTTPD_MIN_SPARE_SERVERS=${MOODLE_MIN_SPARE_SERVERS:-8}
 export HTTPD_MAX_SPARE_SERVERS=${MOODLE_MAX_SPARE_SERVERS:-18}
 export HTTPD_MAX_REQUEST_WORKERS=${MOODLE_MAX_REQUEST_WORKERS:-256}
-sed -i "/MaxKeepAliveRequests/ c\ \ \ \ \MaxKeepAliveRequests\ \ $MOODLE_MAX_KEEP_ALIVE_REQUESTS" /opt/app-root/etc/conf.d/50-mpm-tuning.conf
+sed -i "s,MaxKeepAliveRequests.*$,MaxKeepAliveRequests\ \ $MOODLE_MAX_KEEP_ALIVE_REQUESTS," /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 
 echo "-> HTTPD_START_SERVERS=${HTTPD_START_SERVERS}"
 echo "-> HTTPD_MIN_SPARE_SERVERS=${HTTPD_MIN_SPARE_SERVERS}"
