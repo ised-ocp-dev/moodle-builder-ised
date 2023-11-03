@@ -45,7 +45,13 @@ export HTTPD_START_SERVERS=${MOODLE_START_SERVERS:-8}
 export HTTPD_MIN_SPARE_SERVERS=${MOODLE_MIN_SPARE_SERVERS:-8}
 export HTTPD_MAX_SPARE_SERVERS=${MOODLE_MAX_SPARE_SERVERS:-18}
 export HTTPD_MAX_REQUEST_WORKERS=${MOODLE_MAX_REQUEST_WORKERS:-256}
+ls /opt
+ls /opt/app-root
+ls /opt/app-root/etc
+ls /opt/app-root/etc/conf.d
+cat /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 sed -i "s,MaxKeepAliveRequests.*$,MaxKeepAliveRequests\ \ $MOODLE_MAX_KEEP_ALIVE_REQUESTS," /opt/app-root/etc/conf.d/50-mpm-tuning.conf
+cat /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 
 echo "-> HTTPD_START_SERVERS=${HTTPD_START_SERVERS}"
 echo "-> HTTPD_MIN_SPARE_SERVERS=${HTTPD_MIN_SPARE_SERVERS}"
@@ -71,5 +77,14 @@ echo "-> MAX_KEEP_ALIVE_REQUESTS=${MOODLE_MAX_KEEP_ALIVE_REQUESTS}"
 
 # pre-start files
 process_extending_files ${APP_DATA}/php-pre-start/ ${PHP_CONTAINER_SCRIPTS_PATH}/pre-start/
+
+echo "trying to replace after process_extending_files"
+ls /opt
+ls /opt/app-root
+ls /opt/app-root/etc
+ls /opt/app-root/etc/conf.d
+cat /opt/app-root/etc/conf.d/50-mpm-tuning.conf
+sed -i "s,MaxKeepAliveRequests.*$,MaxKeepAliveRequests\ \ $MOODLE_MAX_KEEP_ALIVE_REQUESTS," /opt/app-root/etc/conf.d/50-mpm-tuning.conf
+cat /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 
 exec httpd -D FOREGROUND
