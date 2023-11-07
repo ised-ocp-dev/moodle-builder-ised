@@ -46,13 +46,15 @@ export HTTPD_MIN_SPARE_SERVERS=${MOODLE_MIN_SPARE_SERVERS:-8}
 export HTTPD_MAX_SPARE_SERVERS=${MOODLE_MAX_SPARE_SERVERS:-18}
 export HTTPD_MAX_REQUEST_WORKERS=${MOODLE_MAX_REQUEST_WORKERS:-256}
 export HTTPD_MAX_CONNECTIONS_PER_CHILD=${MOODLE_MAX_CONNECTIONS_PER_CHILD:-0}
+export MAX_KEEP_ALIVE_REQUESTS=${MOODLE_MAX_KEEP_ALIVE_REQUESTS:-100}
 
 echo "-> HTTPD_START_SERVERS=${HTTPD_START_SERVERS}"
 echo "-> HTTPD_MIN_SPARE_SERVERS=${HTTPD_MIN_SPARE_SERVERS}"
 echo "-> HTTPD_MAX_SPARE_SERVERS=${HTTPD_MAX_SPARE_SERVERS}"
 echo "-> HTTPD_MAX_REQUEST_WORKERS=${HTTPD_MAX_REQUEST_WORKERS}"
+echo "-> MAX_KEEP_ALIVE_REQUESTS=${MAX_KEEP_ALIVE_REQUESTS}"
 echo "-> HTTPD_MAX_CONNECTIONS_PER_CHILD=${HTTPD_MAX_CONNECTIONS_PER_CHILD}"
-echo "-> PHP_MEMORY_LIMIT=${MOODLE_PHP_MEMORY_LIMIT}"
+echo "-> PHP_MEMORY_LIMIT=${PHP_MEMORY_LIMIT}"
 
 # pre-start files
 process_extending_files ${APP_DATA}/php-pre-start/ ${PHP_CONTAINER_SCRIPTS_PATH}/pre-start/
@@ -63,7 +65,7 @@ ls /opt/app-root
 ls /opt/app-root/etc
 ls /opt/app-root/etc/conf.d
 cat /opt/app-root/etc/conf.d/50-mpm-tuning.conf
-sed -i "s,MaxKeepAliveRequests.*$,MaxKeepAliveRequests\ \ $MOODLE_MAX_KEEP_ALIVE_REQUESTS," /opt/app-root/etc/conf.d/50-mpm-tuning.conf
+sed -i "s,MaxKeepAliveRequests.*$,MaxKeepAliveRequests\ \ $MAX_KEEP_ALIVE_REQUESTS," /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 cat /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 
 exec httpd -D FOREGROUND
