@@ -72,4 +72,7 @@ sed -i "s,MaxKeepAliveRequests.*$,MaxKeepAliveRequests\ \ $MAX_KEEP_ALIVE_REQUES
 cat /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 
 
+sed -i 's/LoadModule mpm_event_module modules\/mod_mpm_event.so/LoadModule mpm_prefork_module modules\/mod_mpm_prefork.so/' /etc/httpd/conf.modules.d/00-mpm.conf
+
+
 exec httpd -D FOREGROUND
