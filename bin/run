@@ -40,8 +40,7 @@ envsubst < /opt/app-root/etc/php.d/10-opcache.ini.template > ${PHP_SYSCONF_PATH}
 
 # export OPCACHE_MAX_ACCELERATED_FILES=${OPCACHE_MAX_ACCELERATED_FILES:-10000}
 sed -i 's,^opcache.max_accelerated_files=.*$,opcache.max_accelerated_files=10000,' ${PHP_SYSCONF_PATH}/php.d/10-opcache.ini
-#trying to enable MPM event
-export HTTPD_MPM=event
+
 
 export HTTPD_START_SERVERS=${MOODLE_START_SERVERS:-8}
 export HTTPD_MIN_SPARE_SERVERS=${MOODLE_MIN_SPARE_SERVERS:-8}
@@ -72,4 +71,6 @@ sed -i "s,MaxRequestsPerChild.*$,MaxConnectionsPerChild \ \ $MAX_CONNECTIONS_PER
 sed -i "s,MaxKeepAliveRequests.*$,MaxKeepAliveRequests\ \ $MAX_KEEP_ALIVE_REQUESTS," /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 cat /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 
+#trying to enable MPM event
+export HTTPD_MPM=event
 exec httpd -D FOREGROUND
