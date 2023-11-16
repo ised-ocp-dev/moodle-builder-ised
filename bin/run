@@ -42,12 +42,12 @@ envsubst < /opt/app-root/etc/php.d/10-opcache.ini.template > ${PHP_SYSCONF_PATH}
 sed -i 's,^opcache.max_accelerated_files=.*$,opcache.max_accelerated_files=10000,' ${PHP_SYSCONF_PATH}/php.d/10-opcache.ini
 
 
-export HTTPD_START_SERVERS=${MOODLE_START_SERVERS:-8}
-export HTTPD_MIN_SPARE_SERVERS=${MOODLE_MIN_SPARE_SERVERS:-8}
-export HTTPD_MAX_SPARE_SERVERS=${MOODLE_MAX_SPARE_SERVERS:-18}
-export HTTPD_MAX_REQUEST_WORKERS=${MOODLE_MAX_REQUEST_WORKERS:-256}
-export MAX_CONNECTIONS_PER_CHILD=${MOODLE_MAX_CONNECTIONS_PER_CHILD:-0}
-export MAX_KEEP_ALIVE_REQUESTS=${MOODLE_MAX_KEEP_ALIVE_REQUESTS:-100}
+#export HTTPD_START_SERVERS=${MOODLE_START_SERVERS:-8}
+#export HTTPD_MIN_SPARE_SERVERS=${MOODLE_MIN_SPARE_SERVERS:-8}
+#export HTTPD_MAX_SPARE_SERVERS=${MOODLE_MAX_SPARE_SERVERS:-18}
+#export HTTPD_MAX_REQUEST_WORKERS=${MOODLE_MAX_REQUEST_WORKERS:-256}
+#export MAX_CONNECTIONS_PER_CHILD=${MOODLE_MAX_CONNECTIONS_PER_CHILD:-0}
+#export MAX_KEEP_ALIVE_REQUESTS=${MOODLE_MAX_KEEP_ALIVE_REQUESTS:-100}
 
 
 echo "-> HTTPD_START_SERVERS=${HTTPD_START_SERVERS}"
@@ -67,8 +67,8 @@ ls /opt/app-root
 ls /opt/app-root/etc
 ls /opt/app-root/etc/conf.d
 cat /opt/app-root/etc/conf.d/50-mpm-tuning.conf
-sed -i "s,MaxRequestsPerChild.*$,MaxConnectionsPerChild \ \ $MAX_CONNECTIONS_PER_CHILD," /opt/app-root/etc/conf.d/50-mpm-tuning.conf
-sed -i "s,MaxKeepAliveRequests.*$,MaxKeepAliveRequests\ \ $MAX_KEEP_ALIVE_REQUESTS," /opt/app-root/etc/conf.d/50-mpm-tuning.conf
+#sed -i "s,MaxRequestsPerChild.*$,MaxConnectionsPerChild \ \ $MAX_CONNECTIONS_PER_CHILD," /opt/app-root/etc/conf.d/50-mpm-tuning.conf
+#sed -i "s,MaxKeepAliveRequests.*$,MaxKeepAliveRequests\ \ $MAX_KEEP_ALIVE_REQUESTS," /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 cat /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 
 #trying to enable MPM event
