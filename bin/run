@@ -72,5 +72,6 @@ sed -i "s,MaxKeepAliveRequests.*$,MaxKeepAliveRequests\ \ $MAX_KEEP_ALIVE_REQUES
 cat /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 
 #trying to enable MPM event
-export HTTPD_MPM=event
+sed -i 's/LoadModule mpm_prefork_module modules\/mod_mpm_prefork.so/LoadModule mpm_event_module modules\/mod_mpm_event.so/' /etc/httpd/conf.modules.d/00-mpm.conf
+
 exec httpd -D FOREGROUND
