@@ -40,7 +40,6 @@ envsubst < /opt/app-root/etc/php.d/10-opcache.ini.template > ${PHP_SYSCONF_PATH}
 
 # export OPCACHE_MAX_ACCELERATED_FILES=${OPCACHE_MAX_ACCELERATED_FILES:-10000}
 sed -i 's,^opcache.max_accelerated_files=.*$,opcache.max_accelerated_files=10000,' ${PHP_SYSCONF_PATH}/php.d/10-opcache.ini
-echo "LoadModule mpm_event_module modules/mod_mpm_prefork.so" > /etc/httpd/conf.modules.d/00-mpm.conf
 
 export HTTPD_START_SERVERS=${MOODLE_START_SERVERS:-8}
 export HTTPD_MIN_SPARE_SERVERS=${MOODLE_MIN_SPARE_SERVERS:-8}
@@ -70,9 +69,5 @@ cat /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 sed -i "s,MaxRequestsPerChild.*$,MaxConnectionsPerChild \ \ $MAX_CONNECTIONS_PER_CHILD," /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 sed -i "s,MaxKeepAliveRequests.*$,MaxKeepAliveRequests\ \ $MAX_KEEP_ALIVE_REQUESTS," /opt/app-root/etc/conf.d/50-mpm-tuning.conf
 cat /opt/app-root/etc/conf.d/50-mpm-tuning.conf
-
-
-#sed -i 's/LoadModule mpm_event_module modules\/mod_mpm_event.so/LoadModule mpm_prefork_module modules\/mod_mpm_prefork.so/' /etc/httpd/conf.modules.d/00-mpm.conf
-echo "LoadModule mpm_event_module modules/mod_mpm_prefork.so" > /etc/httpd/conf.modules.d/00-mpm.conf
 
 exec httpd -D FOREGROUND
