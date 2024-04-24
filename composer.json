@@ -357,7 +357,7 @@
     }
   },
   "require": {
-    "php": ">=7.4",
+    "php": ">=7.3",
     "mnsami/composer-custom-directory-installer": "2.0.0",
     "aws/aws-sdk-php": "^3.145",
     "ised-isde/remote-manage": "3.0.3",
