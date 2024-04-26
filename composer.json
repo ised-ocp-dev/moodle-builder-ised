@@ -402,6 +402,7 @@
       "rm -rf dist",
       "rm README.md",
       "ln -s /opt/app-root/src/vendor/ised-isde/remote-manage/rmanage.php rmanage.php",
+      "git config --global --add safe.directory /opt/app-root/src",
       "git cherry-pick -n origin/MDL-63219-M39",
       "git cherry-pick -n origin/MDL-66856-M39",
       "git cherry-pick -n origin/MDL-67554-M39",
