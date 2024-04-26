@@ -42,8 +42,6 @@ USER 1001
 
 WORKDIR /opt/app-root/src
 RUN ./composer.phar install --no-interaction --no-ansi --optimize-autoloader --no-dev
-RUN git status
-RUN git remote -v
 
 # The following commands need to be executed as root.
 
