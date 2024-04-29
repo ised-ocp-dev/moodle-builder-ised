@@ -23,6 +23,7 @@ RUN sed -i 's/Options Indexes FollowSymLinks/Options FollowSymLinks/' /etc/httpd
 # Moodle
 COPY / /opt/app-root/src
 RUN chmod -R g=u+wx /opt/app-root/src
+RUN chown -R default /opt/app-root/src/.git
 
 # Moosh
 # 2021-03-05 - Commented out as it has a broken dependency (see https://github.com/tmuras/moosh/issues/367)
