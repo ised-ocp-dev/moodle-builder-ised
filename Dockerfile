@@ -33,7 +33,7 @@ RUN chmod -R g=u+wx /opt/app-root/src
 
 # Do not run composer as root, according to the documentation.
 
-USER default
+USER 1001
 
 # Moosh (cont.)
 # WORKDIR /opt/app-root/moosh
