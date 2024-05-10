@@ -359,6 +359,7 @@
   "require": {
     "php": ">=7.4",
     "mnsami/composer-custom-directory-installer": "2.0.0",
+    "aws/aws-sdk-php": "^3.145",
     "ised-isde/remote-manage": "3.0.3",
     "ised-isde/moodle": "3.9",
     "ised-isde/moodle-availability_language": "1.0",
