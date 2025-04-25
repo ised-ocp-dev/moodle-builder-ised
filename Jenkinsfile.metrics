@@ -2,7 +2,7 @@
 
 pipeline {
     agent {
-        label 'php-7.4'
+        label 'php-8.1'
     }
 
     options {
