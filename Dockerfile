@@ -1,4 +1,4 @@
-FROM ised-ci/sclorg-s2i-php:7.4
+FROM ised-ci/sclorg-s2i-php:8.1
 
 # The following commands need to be executed as root.
 
