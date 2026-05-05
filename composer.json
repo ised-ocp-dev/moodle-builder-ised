@@ -11,9 +11,9 @@
         "name": "ised-isde/moodle",
         "version": "3.9",
         "source": {
-          "url": "https://github.com/ised-isde-canada/moodle.git",
+          "url": "https://github.com/spirio123/moodle.git",
           "type": "git",
-          "reference": "v39.20230612"
+          "reference": "MOODLE_405_STABLE"
         }
       }
     },
