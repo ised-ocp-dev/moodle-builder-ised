@@ -456,11 +456,11 @@
         },
         {
             "name": "ised-isde/moodle",
-            "version": "3.9",
+            "version": "4.1.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ised-isde-canada/moodle.git",
-                "reference": "v39.20230612"
+                "url": "https://github.com/moodle/moodle.git",
+                "reference": "MOODLE_401_STABLE"
             },
             "type": "library"
         },
@@ -671,6 +671,26 @@
                 "type": "git",
                 "url": "https://github.com/ised-ocp-dev/Moodle-Report-Service-Local.git",
                 "reference": "v39.20230803"
+            },
+            "type": "library"
+        },
+        {
+            "name": "ecampbell/moodle-booktool_wordimport",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ecampbell/moodle-booktool_wordimport.git",
+                "reference": "v1.4.14"
+            },
+            "type": "library"
+        },
+        {
+            "name": "ecampbell/moodle-atto_wordimport",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ecampbell/moodle-atto_wordimport.git",
+                "reference": "v1.4.4"
             },
             "type": "library"
         },

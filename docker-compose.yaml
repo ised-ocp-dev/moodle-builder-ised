@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: moodle
+      POSTGRES_PASSWORD: moodle_password
+      POSTGRES_DB: moodle
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    ports:
+      - "8443:8443"
+    environment:
+      DB_HOST: postgres
+      DB_NAME: moodle
+      DB_USERNAME: moodle
+      DB_PASSWORD: moodle_password
+      MOODLE_DATA_DIR: /var/moodledata
+      MOODLE_URL: https://localhost:8443
+    volumes:
+      - moodledata:/var/moodledata
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  moodledata:

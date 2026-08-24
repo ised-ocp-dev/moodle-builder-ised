@@ -1,7 +1,7 @@
 {
   "name": "ised-isde/moodle-builder",
   "license": "GPL-3.0-or-later",
-  "description": "ISED Builder for Moodle 3.9",
+  "description": "ISED Builder for Moodle 4.5",
   "type": "project",
   "homepage": "http://www.ic.gc.ca/",
   "repositories": [
@@ -11,7 +11,7 @@
         "name": "ised-isde/moodle",
         "version": "3.9",
         "source": {
-          "url": "https://github.com/spirio123/moodle.git",
+          "url": "https://github.com/moodle/moodle.git",
           "type": "git",
           "reference": "MOODLE_405_STABLE"
         }
@@ -287,6 +287,30 @@
           "reference": "v39.20230803"
         }
       }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ecampbell/moodle-booktool_wordimport",
+        "version": "1.0",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/ecampbell/moodle-booktool_wordimport.git",
+          "reference": "v1.4.14"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ecampbell/moodle-atto_wordimport",
+        "version": "1.0",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/ecampbell/moodle-atto_wordimport.git",
+          "reference": "v1.4.4"
+        }
+      }
     }
   ],
   "extra": {
@@ -353,6 +377,12 @@
       ],
       "./dist/local/reportservice": [
         "ised-ocp-dev/moodle-report-service-local"
+      ],
+      "./dist/mod/book/tool/wordimport": [
+        "ecampbell/moodle-booktool_wordimport"
+      ],
+      "./dist/lib/editor/atto/plugins/wordimport": [
+        "ecampbell/moodle-atto_wordimport"
       ]
     }
   },
@@ -381,7 +411,8 @@
     "ised-ocp-dev/moodle-course-completed-enrolment": "1.0",
     "ised-ocp-dev/moodle-block-accessibility-self-hosted": "^39.20221214",
     "ised-ocp-dev/moodle-custom-reports": "^1.0",
-    "ised-ocp-dev/moodle-report-service-local": "^1.0"
+    "ised-ocp-dev/moodle-report-service-local": "^1.0",
+    "ecampbell/moodle-booktool_wordimport": "^1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "7.5.*",
@@ -401,15 +432,7 @@
       "shopt -s dotglob && cp -r dist/* .",
       "rm -rf dist",
       "rm README.md",
-      "ln -s /opt/app-root/src/vendor/ised-isde/remote-manage/rmanage.php rmanage.php",
-      "git cherry-pick -n origin/MDL-63219-M39",
-      "git cherry-pick -n origin/MDL-66856-M39",
-      "git cherry-pick -n origin/MDL-67554-M39",
-      "git cherry-pick -n origin/MDL-67802-M39",
-      "git cherry-pick -n origin/MDL-52810-M39",
-      "git cherry-pick -n origin/MDL-61880-M39",
-      "git cherry-pick -n origin/MDL-64969-M39",
-      "git cherry-pick -n origin/MDL-68337-M39"
+      "ln -s /opt/app-root/src/vendor/ised-isde/remote-manage/rmanage.php rmanage.php"
     ]
   },
   "config": {

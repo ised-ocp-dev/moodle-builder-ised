@@ -1,4 +1,4 @@
-FROM ised-ci/sclorg-s2i-php:8.1
+FROM registry.apps.ocp.dev.ised-isde.canada.ca/ised-ci/sclorg-s2i-php:7.4
 
 # The following commands need to be executed as root.
 
@@ -16,6 +16,15 @@ RUN yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x
 
 # Ghostscript - Required in order to annotate PDFs from within Moodle.
 RUN yum install -y ghostscript
+
+# Remi Repository - Required for PHP 7.4 and its dependencies.
+RUN yum install -y \
+    https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
+    yum install -y https://rpms.remirepo.net/enterprise/remi-release-8.rpm && \
+    yum module reset php -y && \
+    yum module enable -y php:remi-7.4 && \
+    yum install -y php php-cli php-common php-pdo php-mbstring php-xml php-gd php-zip php-sodium php-pgsql && \
+    yum clean all
 
 # Disable directory listings.
 RUN sed -i 's/Options Indexes FollowSymLinks/Options FollowSymLinks/' /etc/httpd/conf/httpd.conf
@@ -56,6 +65,13 @@ RUN chgrp -R 0 /opt/app-root/src && \
 
 RUN chgrp -R 0 /run/httpd && \
     chmod -R g=u /run/httpd
+
+# Ensure Moodle data directory exists and is writable by the application user.
+# This prepares the image so a named volume will inherit reasonable permissions
+# when initialized from the image.
+RUN mkdir -p /var/moodledata && \
+    chown -R 1001:0 /var/moodledata && \
+    chmod 2777 /var/moodledata
 
 #    rm -rf /run/httpd/*
 
