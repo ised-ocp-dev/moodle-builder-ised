@@ -40,10 +40,10 @@ $CFG = new stdClass();
 
 $CFG->dbtype    = 'pgsql';      // 'pgsql', 'mariadb', 'mysqli', 'sqlsrv' or 'oci'
 $CFG->dblibrary = 'native';     // 'native' only at the moment
-$CFG->dbhost    = $_ENV["DB_HOST"];  // eg 'localhost' or 'db.isp.com' or IP
-$CFG->dbname    = $_ENV["DB_NAME"];     // database name, eg moodle
-$CFG->dbuser    = $_ENV["DB_USERNAME"];   // your database username
-$CFG->dbpass    = $_ENV["DB_PASSWORD"];   // your database password
+$CFG->dbhost    = getenv("DB_HOST");  // eg 'localhost' or 'db.isp.com' or IP
+$CFG->dbname    = getenv("DB_NAME");     // database name, eg moodle
+$CFG->dbuser    = getenv("DB_USERNAME");   // your database username
+$CFG->dbpass    = getenv("DB_PASSWORD");   // your database password
 $CFG->prefix    = 'mdl_';       // prefix to use for all table names
 $CFG->dboptions = array(
     'dbpersist' => false,       // should persistent database connections be
@@ -132,7 +132,7 @@ $CFG->dboptions = array(
 // If you need both intranet and Internet access please read
 // http://docs.moodle.org/en/masquerading
 
-$CFG->wwwroot = $_ENV["MOODLE_URL"];
+$CFG->wwwroot = getenv("MOODLE_URL") ?: 'http://localhost:8443';
 
 
 //=========================================================================
@@ -148,7 +148,7 @@ $CFG->wwwroot = $_ENV["MOODLE_URL"];
 //
 // - On Windows systems you might specify something like 'c:\moodledata'
 
-$CFG->dataroot = $_ENV["MOODLE_DATA_DIR"];
+$CFG->dataroot = getenv("MOODLE_DATA_DIR");
 
 
 //=========================================================================
@@ -714,17 +714,17 @@ $CFG->preventexecpath = true;
 //
 
 // Configure outgoing email using environment variables.
-$CFG->smtphosts = trim(!empty($_ENV['AWS_SMTP_HOST']) ? $_ENV['AWS_SMTP_HOST'] : $_ENV['SMTP_HOST']); // SMTP hosts.
-$CFG->smtpsecure = trim(strtolower(!empty($_ENV['AWS_SMTP_SECURITY']) ? $_ENV['AWS_SMTP_SECURITY'] : $_ENV['SMTP_SECURITY'])); // SMTP security.
-$CFG->smtpuser = trim(!empty($_ENV['AWS_SMTP_USERNAME']) ? $_ENV['AWS_SMTP_USERNAME'] : $_ENV['SMTP_USERNAME']); // SMTP username.
-$CFG->smtppass = trim(!empty($_ENV['AWS_SMTP_PASSWORD']) ? $_ENV['AWS_SMTP_PASSWORD'] : $_ENV['SMTP_PASSWORD']); // SMTP password.
-$CFG->noreplyaddress = trim(!empty($_ENV['AWS_SMTP_NOREPLY']) ? $_ENV['AWS_SMTP_NOREPLY'] : $_ENV['SMTP_NOREPLY']); // No-reply address.
+$CFG->smtphosts = trim(!empty($_ENV['AWS_SMTP_HOST']) ? $_ENV['AWS_SMTP_HOST'] : ($_ENV['SMTP_HOST'] ?? '')); // SMTP hosts.
+$CFG->smtpsecure = trim(strtolower(!empty($_ENV['AWS_SMTP_SECURITY']) ? $_ENV['AWS_SMTP_SECURITY'] : ($_ENV['SMTP_SECURITY'] ?? ''))); // SMTP security.
+$CFG->smtpuser = trim(!empty($_ENV['AWS_SMTP_USERNAME']) ? $_ENV['AWS_SMTP_USERNAME'] : ($_ENV['SMTP_USERNAME'] ?? '')); // SMTP username.
+$CFG->smtppass = trim(!empty($_ENV['AWS_SMTP_PASSWORD']) ? $_ENV['AWS_SMTP_PASSWORD'] : ($_ENV['SMTP_PASSWORD'] ?? '')); // SMTP password.
+$CFG->noreplyaddress = trim(!empty($_ENV['AWS_SMTP_NOREPLY']) ? $_ENV['AWS_SMTP_NOREPLY'] : ($_ENV['SMTP_NOREPLY'] ?? '')); // No-reply address.
 $CFG->smtpauthtype = 'LOGIN'; // SMTP Auth Type.
 $CFG->smtpmaxbulk = '2'; // SMTP session limit.
 
 // Configure cron password using environment variable. Note: Must also match password programmed into cronjob's command line.
-if (!empty(trim($_ENV['CRON_PASSWORD']))) {
-    $CFG->cronremotepassword = trim($_ENV['CRON_PASSWORD']);
+if (!empty($_ENV['CRON_PASSWORD'] ?? '')) {
+  $CFG->cronremotepassword = trim($_ENV['CRON_PASSWORD']);
 }
 
 // Server > Support Contact
