@@ -589,8 +589,8 @@
             "version": "4.0.30",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ised-isde-canada/moodle-theme_gcweb",
-                "reference": "v39.20220815"
+                "url": "https://github.com/spirio123/moodle-theme_gcweb",
+                "reference": "moodle_41"
             },
             "type": "library"
         },
