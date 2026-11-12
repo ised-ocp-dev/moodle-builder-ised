@@ -23,7 +23,8 @@ RUN yum install -y \
     yum install -y https://rpms.remirepo.net/enterprise/remi-release-9.rpm && \
     yum module reset php -y && \
     yum module enable -y php:remi-8.1 && \
-    yum install -y php php-cli php-common php-pdo php-mbstring php-xml php-gd php-zip php-sodium php-pgsql && \
+    # yum install -y php php-cli php-common php-pdo php-mbstring php-xml php-gd php-zip php-sodium php-pgsql && \
+    yum install -y php-sodium && \
     yum clean all
 
 # Disable directory listings.
