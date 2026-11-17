@@ -12,6 +12,7 @@ pipeline {
    	environment {
 		// GLobal Vars
 		IMAGE_NAME = "dsdmdl-moodle"
+        TARGET_ROSA_REGISTRY = "${params.env_dev}"
     }
 
     stages {
